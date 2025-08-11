@@ -51,8 +51,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Schedule with Tyreek</title>
 
-  <!-- Calendly Stylesheet -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule with Tyreek</title>
 
   <style>
     /* === Modern Styling === */
@@ -79,6 +83,24 @@
       font-weight: 700;
       margin: 0;
       letter-spacing: 1.5px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      background: #14b8a6;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 35px;
+      box-shadow: 0 8px 20px rgba(20, 184, 166, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #0f766e;
+      box-shadow: 0 12px 30px rgba(15, 118, 110, 0.7);
     }
 
     section {
@@ -116,31 +138,23 @@
   <header>
     <h1>Let’s Connect</h1>
     <p>Book a 30-minute meeting with me anytime.</p>
+    <!-- Direct Calendly Link -->
+    <a href="https://calendly.com/tyreekhaynes01/30min" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="cta-button">
+      Schedule a 30-Min Meeting
+    </a>
   </header>
 
   <section>
     <h2>About Me</h2>
-    <p>I help clients simplify their process and take action faster. Use the button below to schedule a quick call and get started!</p>
-    <p><strong>✨ The scheduling button is always available in the bottom-right corner.</strong></p>
+    <p>I help clients simplify their process and take action faster. Use the button above to schedule a quick call and get started!</p>
   </section>
 
   <footer>
     &copy; 2025 Tyreek Haynes. All rights reserved.
   </footer>
-
-  <!-- Calendly Floating Badge Widget -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-  <script type="text/javascript">
-    window.onload = function () {
-      Calendly.initBadgeWidget({
-        url: 'https://calendly.com/tyreekhaynes01/30min',
-        text: 'Schedule a 30-Min Meeting',
-        color: '#14b8a6',
-        textColor: '#ffffff',
-        branding: true
-      });
-    };
-  </script>
 
 </body>
 </html>
