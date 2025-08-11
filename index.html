@@ -44,62 +44,106 @@
     <p>Email: <a href="mailto:yourname@example.com">tyreekhaynes01@gmail.com</a></p>
     <p>Phone: (484)301-2319</p>
    
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Schedule with Tyreek</title>
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+
+  <!-- Calendly Stylesheet -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
   <style>
+    /* === Modern Styling === */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
       background: #0f172a;
       color: #fff;
       text-align: center;
-      padding: 100px 20px;
+      min-height: 100vh;
     }
 
-    #schedule_button {
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      background-color: #14b8a6;
-      border: none;
-      border-radius: 30px;
-      color: white;
-      cursor: pointer;
-      box-shadow: 0 8px 15px rgba(20, 184, 166, 0.5);
+    header {
+      background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+      padding: 60px 20px;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.5);
     }
 
-    #schedule_button:hover {
-      background-color: #0f766e;
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 1.5px;
+    }
+
+    section {
+      margin: 40px auto;
+      padding: 40px 30px;
+      background: #1e293b;
+      border-radius: 20px;
+      max-width: 900px;
+      color: #cbd5e1;
+      box-shadow: 0 10px 40px rgba(30, 41, 59, 0.8);
+    }
+
+    footer {
+      background: #2563eb;
+      padding: 30px 15px;
+      color: #f0f9ff;
+      font-weight: 600;
+    }
+
+    /* Responsive Text */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      section {
+        margin: 20px 15px;
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Let's Talk!</h1>
-  <button id="schedule_button">Schedule a 30-Min Meeting</button>
+  <header>
+    <h1>Let’s Connect</h1>
+    <p>Book a 30-minute meeting with me anytime.</p>
+  </header>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const button = document.getElementById('schedule_button');
+  <section>
+    <h2>About Me</h2>
+    <p>I help clients simplify their process and take action faster. Use the button below to schedule a quick call and get started!</p>
+    <p><strong>✨ The scheduling button is always available in the bottom-right corner.</strong></p>
+  </section>
 
-      button.addEventListener('click', function () {
-        if (typeof Calendly !== 'undefined') {
-          Calendly.showPopupWidget('https://calendly.com/tyreekhaynes01/30min');
-        } else {
-          alert("Calendly is not loaded. Please check your script.");
-        }
-        return false;
+  <footer>
+    &copy; 2025 Tyreek Haynes. All rights reserved.
+  </footer>
+
+  <!-- Calendly Floating Badge Widget -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      Calendly.initBadgeWidget({
+        url: 'https://calendly.com/tyreekhaynes01/30min',
+        text: 'Schedule a 30-Min Meeting',
+        color: '#14b8a6',
+        textColor: '#ffffff',
+        branding: true
       });
-    });
+    };
   </script>
 
 </body>
 </html>
-
 
   <!-- Footer -->
   <footer>
