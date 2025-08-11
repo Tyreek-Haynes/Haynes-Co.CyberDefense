@@ -7,23 +7,60 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <!-- Header -->
   <header>
     <h1>Haynes-Co CyberDefense</h1>
     <p>Precision protection for a digital world</p>
+    <a href="#contact" class="cta-button">Get in Touch</a>
   </header>
-  <main>
-    <section>
-      <h2>Our Services</h2>
-      <ul>
-        <li>Security Assessments & Audits</li>
-        <li>Incident Response & Recovery</li>
-        <li>Security Program & Strategy Development</li>
-        <li>Employee Traning Awareness</li>
-      </ul>
-    </section>
-  </main>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li><strong>Security Assessments & Aduits</strong> – Identify risks before attackers do.</li>
+      <li><strong>Security Program & Strategy Development</strong> - Understand the oragnization's core missions and how technology supports that mission, Identify the types of threats businesses face, and Engage with key stakehodlers to understand their concerns and goals regarding cybersecurity.</li>
+      <li><strong>Incident Response & Recovery</strong> – Rapid reaction and mitigation for security breaches.</li>
+      <li><strong>Employee Awareness Training</strong> – Build a security-aware team to reduce internal threats.</li>
+    </ul>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Founded by Tyreek Haynes, Haynes-Co CyberDefense brings expert knowledge and real-world
+      experience to help businesses secure their digital assets.
+    </p>
+    <p>
+      With certifications in network security and years in the field, our mission is to protect
+      your business as if it were our own.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:yourname@example.com">tyreekhaynes01@gmail.com</a></p>
+    <p>Phone: (484)301-2319</p>
+   
+
+<button id="schedule_button">Schedule a 30-Min Meeting</button>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<script>
+  document.getElementById('schedule_button').addEventListener('click', function() {
+    Calendly.showPopupWidget('https://calendly.com/tyreekhaynes01/30min');
+    return false;
+  });
+</script>
+
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Haynes-Co CyberDefense</p>
+    <p>&copy; 2025 Haynes-Co CyberDefense. All rights reserved.</p>
   </footer>
 </body>
 </html>
+
+
