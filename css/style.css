@@ -11,8 +11,7 @@
   /* New colors for dark navy content background */
   --dark-navy: #0a1a3a;          /* very dark navy background */
   --content-box-bg: #14264d;     /* slightly lighter navy for content boxes */
-  --content-heading-blue: #6ea0ff; /* soft blue for headings inside content */
-  --content-text-blue: #83b0ff;    /* highlight blue for parts of text */
+  --content-text-blue: #83b0ff;  /* highlight blue for parts of text */
 }
 
 /* Reset and base */
@@ -77,6 +76,10 @@ header p {
   user-select: none;
   border: none;
   cursor: pointer;
+
+  /* Center the button horizontally */
+  margin-left: auto;
+  margin-right: auto;
 }
 .cta-button:hover,
 .cta-button:focus {
@@ -95,6 +98,7 @@ section {
   box-shadow: 0 3px 8px rgba(20, 38, 77, 0.7);
   transition: box-shadow var(--transition-speed);
   color: var(--text-light);
+  text-align: center; /* Center all text inside sections */
 }
 
 section:hover {
@@ -103,10 +107,11 @@ section:hover {
 
 /* Section headings */
 section h2 {
-  color: var(--content-heading-blue);
+  color: #000000; /* black headings */
   margin-bottom: 15px;
   font-weight: 600;
   font-size: 1.8rem;
+  text-align: center;
 }
 
 /* Section text */
@@ -114,6 +119,7 @@ section p {
   color: var(--text-light);
   font-size: 1rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 /* Highlighted or bolded text inside content */
@@ -121,6 +127,15 @@ section p strong,
 section p .highlight-blue {
   color: var(--content-text-blue);
   font-weight: 700;
+}
+
+/* Center align lists inside sections */
+section ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block; /* prevents full width span */
 }
 
 /* Footer */
@@ -140,6 +155,7 @@ form {
   gap: 15px;
   max-width: 450px;
   margin: 0 auto;
+  align-items: center; /* center inputs and buttons */
 }
 
 input, textarea {
@@ -151,6 +167,9 @@ input, textarea {
   resize: vertical;
   background: #1e293b; /* darker input background */
   color: var(--text-light);
+  width: 100%;
+  max-width: 450px;
+  text-align: center; /* center input text */
 }
 input::placeholder, textarea::placeholder {
   color: #94a3b8;
@@ -175,6 +194,11 @@ button {
   cursor: pointer;
   transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
   user-select: none;
+
+  /* center buttons */
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
 button:hover,
 button:focus {
