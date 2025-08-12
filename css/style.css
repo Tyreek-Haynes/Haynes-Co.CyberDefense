@@ -1,7 +1,6 @@
-/* Root color variables for easy theming */
 :root {
-  --hour-blue: #0b2545;
-  --hour-blue-light: #3da9fc;
+  --hour-blue: #000000; /* Black for titles */
+  --hour-blue-light: #228B22; /* Forest green */
   --light-grey: #e6e8f0;
   --text-dark: #16213e;
   --text-light: #f0f4f8;
@@ -9,9 +8,9 @@
   --transition-speed: 0.4s;
 
   /* New colors for dark navy content background */
-  --dark-navy: #2c3e50;
-  --content-box-bg: #34495e;
-  --content-text-blue: #5dade2;
+  --dark-navy: #2c3e50; /* kept as is */
+  --content-box-bg: #34495e; /* kept as is */
+  --content-text-blue: #32CD32; /* Lime green for highlights */
 }
 
 /* Top site title styling */
@@ -44,11 +43,11 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(90deg, #2a7fff, #0053b3);
+  background: linear-gradient(90deg, #228B22, #145214); /* Forest green gradient */
   color: var(--hour-blue-light);
   padding: 60px 20px 50px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 83, 179, 0.5);
+  box-shadow: 0 4px 10px rgba(34, 139, 34, 0.5);
   position: relative;
   z-index: 10;
   border-bottom-left-radius: 20px;
@@ -77,25 +76,25 @@ header p {
   display: inline-block;
   margin-top: 25px;
   padding: 12px 28px;
-  background: #1de9b6;
-  color: #003a2e;
+  background: #228B22;
+  color: #e6f1e0;
   text-decoration: none;
   font-weight: 700;
   font-size: 1rem;
   border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(29, 233, 182, 0.5);
+  box-shadow: 0 4px 10px rgba(34, 139, 34, 0.5);
   transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
   user-select: none;
   border: none;
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px; /* spacing below button */
+  margin-bottom: 30px;
 }
 .cta-button:hover,
 .cta-button:focus {
-  background: #14bfa2;
-  box-shadow: 0 6px 14px rgba(20, 191, 162, 0.7);
+  background: #145214;
+  box-shadow: 0 6px 14px rgba(20, 82, 20, 0.7);
   outline: none;
 }
 
@@ -153,8 +152,8 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 20px 30px; /* equal top and bottom padding */
-  background: linear-gradient(90deg, #2a7fff, #0053b3);
+  padding: 20px 30px;
+  background: linear-gradient(90deg, #228B22, #145214);
   color: var(--hour-blue-light);
   font-size: 0.9rem;
   user-select: none;
@@ -235,7 +234,7 @@ ul {
 }
 .contact-info:hover {
   color: var(--hour-blue-light);
-  text-shadow: 0 0 8px var(--hour-blue-light), 0 0 15px #0053b3;
+  text-shadow: 0 0 8px var(--hour-blue-light), 0 0 15px #145214;
   text-decoration: underline;
 }
 
