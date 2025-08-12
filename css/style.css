@@ -1,12 +1,18 @@
 /* Root color variables for easy theming */
 :root {
-  --hour-blue: #1e3a8a;        /* deep rich blue */
-  --hour-blue-light: #3b82f6;  /* lighter accent blue */
-  --light-grey: #f5f7fa;       /* very light grey */
+  --hour-blue: #1e3a8a;          /* deep rich blue */
+  --hour-blue-light: #3b82f6;    /* lighter accent blue */
+  --light-grey: #f5f7fa;         /* very light grey */
   --text-dark: #1e293b;
   --text-light: #f9fafb;
   --border-radius: 8px;
   --transition-speed: 0.3s;
+
+  /* New colors for dark navy content background */
+  --dark-navy: #0a1a3a;          /* very dark navy background */
+  --content-box-bg: #14264d;     /* slightly lighter navy for content boxes */
+  --content-heading-blue: #6ea0ff; /* soft blue for headings inside content */
+  --content-text-blue: #83b0ff;    /* highlight blue for parts of text */
 }
 
 /* Reset and base */
@@ -19,21 +25,40 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: var(--light-grey);
-  color: var(--text-dark);
+  background: var(--dark-navy); /* changed to dark navy behind content */
+  color: var(--text-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Header */
 header {
-  background: var(--hour-blue);
-  color: var(--text-light);
-  padding: 50px 20px;
+  background: linear-gradient(90deg, #2a7fff, #0053b3); /* bright gradient blue */
+  color: var(--hour-blue-light);
+  padding: 60px 20px 50px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(30, 58, 138, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 83, 179, 0.5);
   position: relative;
   z-index: 10;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Header main heading */
+header h1 {
+  color: var(--hour-blue-light);
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+/* Header subtitle */
+header p {
+  color: white;
+  font-style: italic;
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  font-weight: 400;
 }
 
 /* Call To Action Button */
@@ -41,35 +66,61 @@ header {
   display: inline-block;
   margin-top: 25px;
   padding: 12px 28px;
-  background: var(--hour-blue-light);
-  color: var(--text-light);
+  background: #1de9b6; /* bright teal/green */
+  color: #003a2e; /* dark teal text */
   text-decoration: none;
   font-weight: 700;
   font-size: 1rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+  border-radius: 30px; /* more rounded */
+  box-shadow: 0 4px 10px rgba(29, 233, 182, 0.5);
   transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
   user-select: none;
+  border: none;
+  cursor: pointer;
 }
 .cta-button:hover,
 .cta-button:focus {
-  background: #2563eb;
-  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.6);
+  background: #14bfa2;
+  box-shadow: 0 6px 14px rgba(20, 191, 162, 0.7);
   outline: none;
 }
 
 /* Section styling */
 section {
-  background: white;
+  background: var(--content-box-bg);
   margin: 25px auto;
   padding: 45px 30px;
   max-width: 900px;
   border-radius: var(--border-radius);
-  box-shadow: 0 2px 12px rgba(30, 58, 138, 0.1);
+  box-shadow: 0 3px 8px rgba(20, 38, 77, 0.7);
   transition: box-shadow var(--transition-speed);
+  color: var(--text-light);
 }
+
 section:hover {
-  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.2);
+  box-shadow: 0 4px 20px rgba(20, 38, 77, 0.9);
+}
+
+/* Section headings */
+section h2 {
+  color: var(--content-heading-blue);
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+/* Section text */
+section p {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Highlighted or bolded text inside content */
+section p strong,
+section p .highlight-blue {
+  color: var(--content-text-blue);
+  font-weight: 700;
 }
 
 /* Footer */
@@ -98,11 +149,18 @@ input, textarea {
   font-size: 1rem;
   transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
   resize: vertical;
+  background: #1e293b; /* darker input background */
+  color: var(--text-light);
+}
+input::placeholder, textarea::placeholder {
+  color: #94a3b8;
 }
 input:focus, textarea:focus {
   border-color: var(--hour-blue-light);
   box-shadow: 0 0 6px var(--hour-blue-light);
   outline: none;
+  background: #273549;
+  color: var(--text-light);
 }
 
 /* Buttons */
