@@ -154,7 +154,7 @@ section ul {
 footer {
   text-align: center;
   padding: 30px 20px;
-  background: var(--content-text-blue);
+  background: var(--content-text-blue); /* soft cornflower blue */
   color: var(--text-light);
   font-size: 0.9rem;
   user-select: none;
