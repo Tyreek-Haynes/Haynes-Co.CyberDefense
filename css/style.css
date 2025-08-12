@@ -5,21 +5,20 @@
   padding: 0;
 }
 
+:root {
+  /* Light mode colors */
+  --bg: #fafbfc;      /* light background */
+  --text: #1e293b;    /* dark text for readability */
+  --primary: #2563eb; /* rich blue for headings/buttons */
+  --secondary: #4b5563; /* medium gray for subtext */
+}
+
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   padding: 2rem;
-}
-
-/* Root variables */
-:root {
-  /* Light mode colors */
-  --bg: #fafbfc; /* light background */
-  --text: #1e293b; /* dark text for readability */
-  --primary: #2563eb; /* rich blue for headings/buttons */
-  --secondary: #4b5563; /* medium gray for subtext */
 }
 
 /* Headings */
@@ -33,37 +32,30 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* Our Services Section */
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 1rem;
+/* Your Services Section Styles */
+#services {
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.service-card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-  padding: 1.5rem;
-  transition: box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-  box-shadow: 0 6px 14px rgb(0 0 0 / 0.15);
-}
-
-.service-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+#services h2 {
   color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.service-description {
-  font-size: 1rem;
-  color: var(--secondary);
-  line-height: 1.5;
+#services ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+#services li strong {
+  color: var(--primary);
 }
 
 /* Links */
@@ -76,7 +68,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Buttons (if needed) */
+/* Buttons */
 button {
   background-color: var(--primary);
   color: white;
@@ -89,5 +81,5 @@ button {
 }
 
 button:hover {
-  background-color: #1e40af; /* a darker blue */
+  background-color: #1e40af;
 }
