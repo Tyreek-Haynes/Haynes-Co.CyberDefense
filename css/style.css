@@ -16,7 +16,7 @@
 
 /* Top site title styling */
 #site-title {
-  color: #000000; /* black text */
+  color: #000000 !important; /* force black text */
   font-size: 3.5rem;
   font-weight: 700;
   text-align: center;
