@@ -7,10 +7,10 @@
   --border-radius: 10px;
   --transition-speed: 0.4s;
 
-  /* New colors for dark navy content background */
-  --dark-navy: #2c3e50; /* kept as is */
-  --content-box-bg: #34495e; /* kept as is */
-  --content-text-blue: #32CD32; /* Lime green for highlights */
+  /* Colors for green theme */
+  --dark-navy: #1b2a17; /* Darker forest green background */
+  --content-box-bg: #2a3b20; /* Muted green tone */
+  --content-text-blue: #32CD32; /* Lime green highlights */
 }
 
 /* Top site title styling */
@@ -43,7 +43,7 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(90deg, #228B22, #145214); /* Forest green gradient */
+  background: linear-gradient(90deg, #228B22, #145214);
   color: var(--hour-blue-light);
   padding: 60px 20px 50px;
   text-align: center;
@@ -198,7 +198,7 @@ input:focus, textarea:focus {
 /* Buttons */
 button {
   padding: 14px 0;
-  background: var(--hour-blue);
+  background: var(--hour-blue-light);
   color: var(--text-light);
   font-weight: 600;
   font-size: 1.1rem;
@@ -213,8 +213,8 @@ button {
 }
 button:hover,
 button:focus {
-  background: var(--hour-blue-light);
-  box-shadow: 0 0 10px var(--hour-blue-light);
+  background: #145214;
+  box-shadow: 0 0 10px #145214;
   outline: none;
 }
 
