@@ -149,11 +149,17 @@ section ul {
 /* Footer */
 footer {
   text-align: center;
-  padding: 30px 20px;
+  padding: 50px 30px 20px;
   background: linear-gradient(90deg, #2a7fff, #0053b3);
   color: var(--hour-blue-light);
   font-size: 0.9rem;
   user-select: none;
+}
+
+/* Give the button a bit of bottom margin */
+.cta-button {
+  display: inline-block;
+  margin-bottom: 30px; /* extra spacing above the footer text */
 }
 
 /* Forms */
