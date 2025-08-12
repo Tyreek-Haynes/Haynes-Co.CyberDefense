@@ -1,17 +1,19 @@
 /* Root color variables for easy theming */
 :root {
-  --hour-blue: #1e3a8a;          /* deep rich blue */
-  --hour-blue-light: #3b82f6;    /* lighter accent blue */
-  --light-grey: #f5f7fa;         /* very light grey */
-  --text-dark: #1e293b;
-  --text-light: #f9fafb;
-  --border-radius: 8px;
-  --transition-speed: 0.3s;
+  --hour-blue: #0b2545;          /* darker midnight blue */
+  --hour-blue-light: #3da9fc;    /* bright sky blue */
+  --light-grey: #e6e8f0;         /* soft pale lavender-gray */
+  --text-dark: #16213e;          /* very dark navy text */
+  --text-light: #f0f4f8;         /* off-white text */
+  --border-radius: 10px;
+  --transition-speed: 0.4s;
+
+
 
   /* New colors for dark navy content background */
-  --dark-navy: #0a1a3a;          /* very dark navy background */
-  --content-box-bg: #14264d;     /* slightly lighter navy for content boxes */
-  --content-text-blue: #83b0ff;  /* highlight blue for parts of text */
+  --dark-navy: #2c3e50;          /* slate navy gray */
+  --content-box-bg: #34495e;     /* muted steel blue */
+  --content-text-blue: #5dade2;  /* soft cornflower blue */
 }
 
 /* Top site title styling */
