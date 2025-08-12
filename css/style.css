@@ -8,8 +8,6 @@
   --border-radius: 10px;
   --transition-speed: 0.4s;
 
-
-
   /* New colors for dark navy content background */
   --dark-navy: #2c3e50;          /* slate navy gray */
   --content-box-bg: #34495e;     /* muted steel blue */
@@ -226,6 +224,21 @@ ul {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
+}
+
+/* Contact info links: white with advanced hover glow */
+.contact-info {
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.contact-info:hover {
+  color: var(--hour-blue-light);
+  text-shadow: 0 0 8px var(--hour-blue-light), 0 0 15px #0053b3;
+  text-decoration: underline;
 }
 
 /* Responsive improvements */
