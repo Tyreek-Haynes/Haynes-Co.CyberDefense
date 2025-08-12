@@ -6,13 +6,14 @@
 }
 
 :root {
-  /* Light mode colors */
-  --bg: #fafbfc;      /* light background */
-  --text: #1e293b;    /* dark text for readability */
-  --primary: #2563eb; /* rich blue for headings/buttons */
-  --secondary: #4b5563; /* medium gray for subtext */
+  /* Light mode colors for rest of the page */
+  --bg: #fafbfc;          /* light background */
+  --text: #1e293b;        /* dark text */
+  --primary: #2563eb;     /* rich blue */
+  --secondary: #4b5563;   /* medium gray */
 }
 
+/* Body styling */
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -32,30 +33,44 @@ h1 {
   font-size: 2.5rem;
 }
 
-/* Your Services Section Styles */
-#services {
-  background-color: var(--bg);
-  color: var(--text);
+/* === HEADER AND SERVICES DARK THEME === */
+header, #services {
+  background-color: #1e293b; /* dark blue background */
+  color: #e0e7ff;            /* light text */
   padding: 2rem 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-#services h2 {
-  color: var(--primary);
-  font-size: 2rem;
-  margin-bottom: 1rem;
+header h1, header p, #services h2 {
+  color: #60a5fa; /* bright blue text */
+}
+
+header p {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 0.5rem 0 1.5rem;
 }
 
 #services ul {
   list-style-type: disc;
   padding-left: 1.5rem;
-  color: var(--text);
   font-size: 1.1rem;
   line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #e0e7ff;
+  text-align: left;
+}
+
+#services ul li {
+  margin-bottom: 1rem;
 }
 
 #services li strong {
-  color: var(--primary);
+  color: #93c5fd;
 }
 
 /* Links */
@@ -68,9 +83,14 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Links inside header and services should be bright blue */
+header a, #services a {
+  color: #60a5fa;
+}
+
 /* Buttons */
-button {
-  background-color: var(--primary);
+button, .cta-button {
+  background-color: #60a5fa;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -78,8 +98,70 @@ button {
   cursor: pointer;
   font-weight: 700;
   transition: background-color 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
 }
 
-button:hover {
+button:hover, .cta-button:hover {
   background-color: #1e40af;
+}
+
+/* About and Contact sections (light theme) */
+#about, #contact {
+  background-color: var(--bg);
+  color: var(--text);
+  padding: 2rem 1rem 3rem;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+#about h2, #contact h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+#about p, #contact p {
+  max-width: 750px;
+  margin: 0 auto 1rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+#contact a {
+  color: var(--primary);
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  padding: 1rem 0;
+  color: #f0f9ff;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  header, #services, #about, #contact {
+    margin: 1rem;
+    padding: 1.5rem 1rem 2.5rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  #services ul {
+    padding-left: 1.25rem;
+  }
 }
