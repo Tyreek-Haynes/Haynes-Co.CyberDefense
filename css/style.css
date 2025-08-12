@@ -1,17 +1,6 @@
-/* Root variables for easy theming */
+ /* Root variables for easy theming */
+/* Blue Hour is now the default */
 :root {
-  /* Light mode colors */
-  --bg: #fafbfc; /* Brighter, softer light gray */
-  --text: #1e293b;
-  --primary: #2563eb; /* Rich blue */
-  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-  --accent: #14b8a6; /* Teal */
-  --card-bg: #ffffff;
-  --input-bg: #f1f5f9;
-}
-
-[data-theme="dark"] {
-  /* Blue Hour inspired dark mode */
   --bg: #0a1128; /* Deep twilight navy */
   --text: #e2e8f0; /* Softer off-white */
   --primary: #1d4ed8; /* Muted blue */
@@ -19,6 +8,17 @@
   --accent: #0ea5e9; /* Soft cyan for contrast */
   --card-bg: #18223a; /* Twilight slate */
   --input-bg: #22314d;
+}
+
+/* Light mode */
+[data-theme="light"] {
+  --bg: #fafbfc; /* Brighter, softer light gray */
+  --text: #1e293b;
+  --primary: #2563eb; /* Rich blue */
+  --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --accent: #14b8a6; /* Teal */
+  --card-bg: #ffffff;
+  --input-bg: #f1f5f9;
 }
 
 /* Base styles */
