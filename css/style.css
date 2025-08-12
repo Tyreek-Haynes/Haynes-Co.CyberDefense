@@ -154,7 +154,7 @@ section ul {
 footer {
   text-align: center;
   padding: 30px 20px;
-  background: var(--hour-blue);
+  background: var(--dark-navy);
   color: var(--text-light);
   font-size: 0.9rem;
   user-select: none;
