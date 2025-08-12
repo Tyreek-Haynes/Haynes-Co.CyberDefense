@@ -1,4 +1,4 @@
-/* Base / Reset */
+/* Reset and Base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,145 +6,166 @@
 }
 
 :root {
-  /* Light mode colors for rest of the page */
-  --bg: #fafbfc;          /* light background */
-  --text: #1e293b;        /* dark text */
-  --primary: #2563eb;     /* rich blue */
-  --secondary: #4b5563;   /* medium gray */
+  --bg-light: #fafbfc;
+  --text-dark: #1e293b;
+  --primary-blue: #2563eb;
+  --primary-light-blue: #60a5fa;
+  --secondary-gray: #4b5563;
+  --dark-bg: #1e293b;
+  --light-text: #e0e7ff;
+  --button-bg: #60a5fa;
+  --button-hover-bg: #1e40af;
 }
 
-/* Body styling */
+/* Body and general text */
 body {
-  background-color: var(--bg);
-  color: var(--text);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   line-height: 1.6;
   padding: 2rem;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--primary);
-  margin-bottom: 1rem;
+/* Headers */
+h1, h2, h3 {
+  color: var(--primary-blue);
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 2.5rem;
 }
 
-/* === HEADER AND SERVICES DARK THEME === */
-header, #services {
-  background-color: #1e293b; /* dark blue background */
-  color: #e0e7ff;            /* light text */
-  padding: 2rem 1rem;
+h3 {
+  margin-top: 2rem;
+}
+
+/* === Header Section === */
+header {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  text-align: center;
+  padding: 3rem 1rem 2rem;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-  text-align: center;
   margin-bottom: 2rem;
 }
 
-header h1, header p, #services h2 {
-  color: #60a5fa; /* bright blue text */
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 header p {
   font-style: italic;
   font-size: 1.2rem;
+  color: var(--primary-light-blue);
   margin: 0.5rem 0 1.5rem;
+}
+
+/* === Services Section === */
+#services {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  padding: 2rem 2rem 3rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  text-align: left;
+}
+
+#services h2 {
+  text-align: center;
+  color: var(--primary-light-blue);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 #services ul {
   list-style-type: disc;
-  padding-left: 1.5rem;
+  padding-left: 2rem;
   font-size: 1.1rem;
   line-height: 1.6;
-  max-width: 800px;
+  color: var(--light-text);
+  max-width: 850px;
   margin: 0 auto;
-  color: #e0e7ff;
-  text-align: left;
 }
 
 #services ul li {
   margin-bottom: 1rem;
 }
 
-#services li strong {
+#services ul li strong {
   color: #93c5fd;
 }
 
-/* Links */
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Links inside header and services should be bright blue */
-header a, #services a {
-  color: #60a5fa;
-}
-
-/* Buttons */
-button, .cta-button {
-  background-color: #60a5fa;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-  text-decoration: none;
-}
-
-button:hover, .cta-button:hover {
-  background-color: #1e40af;
-}
-
-/* About and Contact sections (light theme) */
+/* === About & Contact Sections === */
 #about, #contact {
-  background-color: var(--bg);
-  color: var(--text);
-  padding: 2rem 1rem 3rem;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  padding: 2rem 2rem 3rem;
   max-width: 900px;
   margin: 0 auto 2rem;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-/* Contact heading h2 */
-#about h2, #contact h2 {
-  color: var(--primary);
-  font-size: 2rem;
-  margin-bottom: 1rem;
   text-align: center;
 }
 
-/* Contact paragraph */
-#about p, #contact p {
-  max-width: 750px;
-  margin: 0 auto 1rem;
+#about h2, #contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-blue);
+}
+
+/* Contact specific styling */
+#contact h3 {
+  color: var(--primary-blue);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#contact p {
   font-size: 1.1rem;
+  margin-bottom: 1rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.6;
 }
 
-/* Contact links */
 #contact a {
-  color: var(--primary);
+  color: var(--primary-blue);
+  text-decoration: none;
 }
 
 #contact a:hover {
   text-decoration: underline;
 }
 
+/* Buttons (used for CTA links) */
+.cta-button {
+  background-color: var(--button-bg);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 35px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 8px 20px rgba(96, 165, 250, 0.5);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+}
+
+.cta-button:hover {
+  background-color: var(--button-hover-bg);
+  box-shadow: 0 12px 30px rgba(30, 64, 175, 0.7);
+}
+
 /* Footer */
 footer {
-  background: var(--primary);
+  background-color: var(--primary-blue);
   padding: 1rem 0;
   color: #f0f9ff;
   font-weight: 600;
@@ -167,26 +188,4 @@ footer {
   #services ul {
     padding-left: 1.25rem;
   }
-}
-
-/* === New Contact Section Additions === */
-#contact h3 {
-  color: var(--primary);
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-#contact p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-}
-
-#contact a.cta-button {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.75rem 2rem;
 }
