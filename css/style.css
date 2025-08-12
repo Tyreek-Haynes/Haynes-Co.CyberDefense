@@ -1,22 +1,22 @@
 /* Root color variables for easy theming */
 :root {
-  --hour-blue: #0b2545;          /* darker midnight blue */
-  --hour-blue-light: #3da9fc;    /* bright sky blue */
-  --light-grey: #e6e8f0;         /* soft pale lavender-gray */
-  --text-dark: #16213e;          /* very dark navy text */
-  --text-light: #f0f4f8;         /* off-white text */
+  --hour-blue: #0b2545;
+  --hour-blue-light: #3da9fc;
+  --light-grey: #e6e8f0;
+  --text-dark: #16213e;
+  --text-light: #f0f4f8;
   --border-radius: 10px;
   --transition-speed: 0.4s;
 
   /* New colors for dark navy content background */
-  --dark-navy: #2c3e50;          /* slate navy gray */
-  --content-box-bg: #34495e;     /* muted steel blue */
-  --content-text-blue: #5dade2;  /* soft cornflower blue */
+  --dark-navy: #2c3e50;
+  --content-box-bg: #34495e;
+  --content-text-blue: #5dade2;
 }
 
 /* Top site title styling */
 #site-title {
-  color: #000000 !important; /* force black text */
+  color: #000000 !important;
   font-size: 3.5rem;
   font-weight: 700;
   text-align: center;
@@ -36,7 +36,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: var(--dark-navy); /* changed to dark navy behind content */
+  background: var(--dark-navy);
   color: var(--text-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,7 +44,7 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(90deg, #2a7fff, #0053b3); /* bright gradient blue */
+  background: linear-gradient(90deg, #2a7fff, #0053b3);
   color: var(--hour-blue-light);
   padding: 60px 20px 50px;
   text-align: center;
@@ -77,19 +77,17 @@ header p {
   display: inline-block;
   margin-top: 25px;
   padding: 12px 28px;
-  background: #1de9b6; /* bright teal/green */
-  color: #003a2e; /* dark teal text */
+  background: #1de9b6;
+  color: #003a2e;
   text-decoration: none;
   font-weight: 700;
   font-size: 1rem;
-  border-radius: 30px; /* more rounded */
+  border-radius: 30px;
   box-shadow: 0 4px 10px rgba(29, 233, 182, 0.5);
   transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
   user-select: none;
   border: none;
   cursor: pointer;
-
-  /* Center the button horizontally */
   margin-left: auto;
   margin-right: auto;
 }
@@ -110,7 +108,7 @@ section {
   box-shadow: 0 3px 8px rgba(20, 38, 77, 0.7);
   transition: box-shadow var(--transition-speed);
   color: var(--text-light);
-  text-align: center; /* Center all text inside sections */
+  text-align: center;
 }
 
 section:hover {
@@ -119,7 +117,7 @@ section:hover {
 
 /* Section headings */
 section h2 {
-  color: #000000; /* black headings */
+  color: #000000;
   margin-bottom: 15px;
   font-weight: 600;
   font-size: 1.8rem;
@@ -134,27 +132,25 @@ section p {
   text-align: center;
 }
 
-/* Highlighted or bolded text inside content */
 section p strong,
 section p .highlight-blue {
   color: var(--content-text-blue);
   font-weight: 700;
 }
 
-/* Center align lists inside sections */
 section ul {
   list-style-type: none;
   padding-left: 0;
   margin: 0 auto;
   text-align: center;
-  display: inline-block; /* prevents full width span */
+  display: inline-block;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 30px 20px;
-  background: linear-gradient(90deg, #2a7fff, #0053b3); /* bright gradient blue */
+  background: linear-gradient(90deg, #2a7fff, #0053b3);
   color: var(--hour-blue-light);
   font-size: 0.9rem;
   user-select: none;
@@ -167,21 +163,21 @@ form {
   gap: 15px;
   max-width: 450px;
   margin: 0 auto;
-  align-items: center; /* center inputs and buttons */
+  align-items: center;
 }
 
 input, textarea {
   padding: 14px 16px;
-  border: 1.5px solid #cbd5e1; /* soft border */
+  border: 1.5px solid #cbd5e1;
   border-radius: var(--border-radius);
   font-size: 1rem;
   transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
   resize: vertical;
-  background: #1e293b; /* darker input background */
+  background: #1e293b;
   color: var(--text-light);
   width: 100%;
   max-width: 450px;
-  text-align: center; /* center input text */
+  text-align: center;
 }
 input::placeholder, textarea::placeholder {
   color: #94a3b8;
@@ -206,8 +202,6 @@ button {
   cursor: pointer;
   transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
   user-select: none;
-
-  /* center buttons */
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
@@ -219,14 +213,13 @@ button:focus {
   outline: none;
 }
 
-/* List styling */
 ul {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
 }
 
-/* Contact info links: white with advanced hover glow */
+/* Contact info links */
 .contact-info {
   color: white;
   font-weight: 600;
@@ -234,24 +227,62 @@ ul {
   cursor: pointer;
   text-decoration: none;
 }
-
 .contact-info:hover {
   color: var(--hour-blue-light);
   text-shadow: 0 0 8px var(--hour-blue-light), 0 0 15px #0053b3;
   text-decoration: underline;
 }
 
-/* Responsive improvements */
-@media (max-width: 600px) {
-  header, section, footer {
-    padding-left: 15px;
-    padding-right: 15px;
+/* --- Responsive Styles --- */
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  #site-title {
+    font-size: 2.5rem;
+  }
+  header h1 {
+    font-size: 2.2rem;
+  }
+  header p {
+    font-size: 1rem;
   }
   section {
-    margin: 15px;
     padding: 30px 20px;
+    margin: 15px;
   }
   form {
+    width: 100%;
     max-width: 100%;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Phone adjustments */
+@media (max-width: 480px) {
+  #site-title {
+    font-size: 2rem;
+  }
+  header h1 {
+    font-size: 1.8rem;
+  }
+  header p {
+    font-size: 0.95rem;
+  }
+  section h2 {
+    font-size: 1.4rem;
+  }
+  section p {
+    font-size: 0.95rem;
+  }
+  .cta-button, button {
+    width: 100%;
+    padding: 14px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
