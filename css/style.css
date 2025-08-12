@@ -90,6 +90,7 @@ header p {
   cursor: pointer;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px; /* spacing below button */
 }
 .cta-button:hover,
 .cta-button:focus {
@@ -148,18 +149,17 @@ section ul {
 
 /* Footer */
 footer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 50px 30px 20px;
   background: linear-gradient(90deg, #2a7fff, #0053b3);
   color: var(--hour-blue-light);
   font-size: 0.9rem;
   user-select: none;
-}
-
-/* Give the button a bit of bottom margin */
-.cta-button {
-  display: inline-block;
-  margin-bottom: 30px; /* extra spacing above the footer text */
+  text-align: center;
+  min-height: 80px;
 }
 
 /* Forms */
@@ -245,8 +245,8 @@ ul {
 @media (max-width: 768px) {
   #site-title {
     font-size: 2.5rem;
-    white-space: normal; /* allow wrapping */
-    word-break: break-word; /* break long words */
+    white-space: normal;
+    word-break: break-word;
     line-height: 1.2;
     text-align: center;
     margin-left: auto;
@@ -275,7 +275,7 @@ ul {
 /* Phone adjustments */
 @media (max-width: 480px) {
   #site-title {
-    font-size: 1.6rem; /* smaller for phones */
+    font-size: 1.6rem;
     white-space: normal;
     word-break: break-word;
     line-height: 1.2;
