@@ -61,7 +61,7 @@ p {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
+  background: var(--hour-blue);
   color: var(--text-light);
   padding: 60px 20px;
   text-align: center;
