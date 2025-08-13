@@ -13,6 +13,11 @@
   --content-text-blue: #32CD32; /* lime green for highlights */
 }
 
+/* Global box-sizing for easier sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* Base styles */
 body {
   font-family: 'Poppins', Arial, sans-serif;
@@ -42,7 +47,7 @@ p {
   max-width: 800px; /* Optional for better readability */
 }
 
-/* Added explicit centering and max-width for About and Services */
+/* Explicit centering and max-width for About and Services */
 #about, #services {
   margin-left: auto;
   margin-right: auto;
@@ -65,7 +70,7 @@ header {
   color: var(--text-light);
   padding: 60px 20px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(34, 139, 34, 0.5); /* using forest green shadow */
+  box-shadow: 0 4px 15px rgba(34, 139, 34, 0.5); /* forest green shadow */
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
@@ -79,8 +84,8 @@ header h1 {
 
 /* Call to action button */
 .cta-button {
-  display: block;           /* changed to block for centering */
-  margin: 30px auto;        /* vertical spacing and center horizontally */
+  display: block;           /* block for centering */
+  margin: 30px auto;        /* vertical spacing, center horizontally */
   padding: 14px 28px;
   background: var(--hour-blue-light);
   color: var(--text-light);
@@ -89,11 +94,11 @@ header h1 {
   border-radius: 35px;
   box-shadow: 0 8px 20px rgba(50, 205, 50, 0.5);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  width: fit-content;       /* fits button width to content */
+  width: fit-content;       /* fit width to content */
 }
 
 .cta-button:hover {
-  background: #176817; /* Slightly darker forest green for hover */
+  background: #176817; /* Darker forest green hover */
   box-shadow: 0 12px 30px rgba(23, 104, 23, 0.7);
 }
 
@@ -207,6 +212,16 @@ ul li::before {
   text-decoration: underline;
 }
 
+/* Navigation styling (assuming nav exists) */
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-left: 0;
+  margin: 0 auto 20px;
+  list-style: none;
+}
+
 /* --- Responsive Styles --- */
 
 /* Tablet adjustments */
@@ -222,9 +237,34 @@ ul li::before {
   }
   header h1 { font-size: 2.2rem; }
   header p { font-size: 1rem; }
-  section { padding: 30px 20px; margin: 15px; }
-  form { width: 100%; max-width: 100%; }
-  nav ul { flex-direction: column; gap: 10px; }
+  
+  section { 
+    padding: 30px 20px; 
+    margin: 20px 15px;
+    border-radius: 15px;
+    max-width: 100%;
+  }
+  
+  form { 
+    width: 100%; 
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  
+  nav ul { 
+    flex-direction: column; 
+    gap: 15px; 
+    max-width: 90%;
+    margin: 0 auto 20px;
+  }
+  
+  .cta-button,
+  button {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px 0;
+    font-size: 1.1rem;
+  }
 }
 
 /* Phone adjustments */
@@ -239,11 +279,40 @@ ul li::before {
     margin-left: auto;
     margin-right: auto;
   }
-  header h1 { font-size: 1.8rem; }
+  header h1 { font-size: 1.8rem; margin-bottom: 12px; }
   header p { font-size: 0.95rem; }
-  section h2 { font-size: 1.4rem; }
-  section p { font-size: 0.95rem; }
-  .cta-button, button { width: 100%; padding: 14px; }
-  img { max-width: 100%; height: auto; }
+  section h2 { font-size: 1.3rem; margin-bottom: 12px; }
+  section p,
+  #contact p,
+  #about p,
+  #services p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+  ul li {
+    font-size: 1rem;
+    padding-left: 20px;
+  }
+  ul li::before {
+    left: 5px;
+    font-size: 1rem;
+  }
+  #contact,
+  #about,
+  #services {
+    padding: 0 10px;
+  }
+  input,
+  textarea {
+    font-size: 1rem;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 }
-}
+
+
