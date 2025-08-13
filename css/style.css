@@ -1,17 +1,17 @@
+/* ✅ Fixed: use :root (not root) */
 :root {
-  --forest-green-dark: #145214; /* Dark forest green */
-  --forest-green: #228B22; /* Main forest green */
-  --forest-green-light: #32CD32; /* Lime green highlight */
+  --hour-blue: #000000; /* Black for titles */
+  --hour-blue-light: #228B22; /* Forest green */
   --light-grey: #e6e8f0;
   --text-dark: #16213e;
   --text-light: #f0f4f8;
   --border-radius: 10px;
   --transition-speed: 0.4s;
 
-  /* Colors for green theme */
-  --dark-navy: #1b2a17; /* Darker green background */
-  --content-box-bg: #2a3b20; /* Muted green tone */
-  --content-text-green: #32CD32; /* Lime green highlights */
+  /* Green theme “ground” colors */
+  --dark-navy: #1b2a17;           /* Deep green site background */
+  --content-box-bg: #2a3b20;      /* Muted green content cards */
+  --content-text-blue: #32CD32;   /* Lime green highlights */
 }
 
 /* Top site title styling */
@@ -27,33 +27,40 @@
 }
 
 /* Reset and base */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: var(--dark-navy);
+
+  /* ✅ Green “ground” background */
+  background: var(--dark-navy); /* fallback */
+  background: linear-gradient(180deg, #142312 0%, #1b2a17 60%, #152414 100%);
+
   color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Header */
 header {
-  background: linear-gradient(90deg, var(--forest-green), var(--forest-green-dark));
-  color: var(--forest-green-light);
+  background: linear-gradient(90deg, #228B22, #145214);
+  color: var(--hour-blue-light);
   padding: 60px 20px 50px;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(34, 139, 34, 0.5);
+  /* ✅ Shadow tinted green, not blue */
+  box-shadow: 0 4px 10px rgba(20, 82, 20, 0.55);
+  position: relative;
+  z-index: 10;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
-/* Header main heading */
+/* Header main heading - keep title white per your request */
 header h1 {
-  color: var(--forest-green-light);
+  color: #ffffff; /* ✅ white title for contrast */
   font-size: 3rem;
   margin-bottom: 10px;
   font-weight: 700;
@@ -61,10 +68,11 @@ header h1 {
 
 /* Header subtitle */
 header p {
-  color: white;
+  color: #eef7ee;
   font-style: italic;
   font-size: 1.25rem;
   margin-bottom: 30px;
+  font-weight: 400;
 }
 
 /* Call To Action Button */
@@ -72,16 +80,27 @@ header p {
   display: inline-block;
   margin-top: 25px;
   padding: 12px 28px;
-  background: var(--forest-green);
+  background: #228B22;
   color: #e6f1e0;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
   border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(34, 139, 34, 0.5);
+  /* ✅ Green shadow */
+  box-shadow: 0 4px 10px rgba(20, 82, 20, 0.5);
   transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+  user-select: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
 }
 .cta-button:hover,
 .cta-button:focus {
-  background: var(--forest-green-dark);
+  background: #145214;
   box-shadow: 0 6px 14px rgba(20, 82, 20, 0.7);
+  outline: none;
 }
 
 /* Section styling */
@@ -91,43 +110,170 @@ section {
   padding: 45px 30px;
   max-width: 900px;
   border-radius: var(--border-radius);
-  box-shadow: 0 3px 8px rgba(20, 38, 77, 0.7);
+  /* ✅ Green-tinted shadows */
+  box-shadow: 0 3px 8px rgba(20, 82, 20, 0.4);
+  transition: box-shadow var(--transition-speed);
   color: var(--text-light);
+  text-align: center;
+}
+section:hover {
+  box-shadow: 0 4px 20px rgba(20, 82, 20, 0.55);
 }
 
+/* Section headings */
 section h2 {
-  color: #000000;
+  color: #000000; /* keep black */
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-align: center;
 }
 
+/* Section text */
+section p {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
 section p strong,
-section p .highlight-green {
-  color: var(--content-text-green);
+section p .highlight-blue {
+  color: var(--content-text-blue);
+  font-weight: 700;
+}
+section ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
 }
 
 /* Footer */
 footer {
-  background: linear-gradient(90deg, var(--forest-green), var(--forest-green-dark));
-  color: var(--forest-green-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 20px 30px;
+  background: linear-gradient(90deg, #228B22, #145214);
+  color: #eaf5ea; /* ✅ legible on green */
+  font-size: 0.9rem;
+  user-select: none;
+  text-align: center;
+  min-height: 80px;
+  /* ✅ Green shadow */
+  box-shadow: 0 -3px 10px rgba(20, 82, 20, 0.35);
 }
 
 /* Forms */
-input:focus, textarea:focus {
-  border-color: var(--forest-green-light);
-  box-shadow: 0 0 6px var(--forest-green-light);
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 450px;
+  margin: 0 auto;
+  align-items: center;
 }
 
-button {
-  background: var(--forest-green-light);
+/* ✅ Inputs now use greenish ground tones (not blue-gray) */
+input, textarea {
+  padding: 14px 16px;
+  border: 1.5px solid #334a36;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed), background var(--transition-speed);
+  resize: vertical;
+  background: #152317; /* was #1e293b */
   color: var(--text-light);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+input::placeholder, textarea::placeholder { color: #94a3b8; }
+input:focus, textarea:focus {
+  border-color: #32CD32;
+  box-shadow: 0 0 6px rgba(50, 205, 50, 0.55);
+  outline: none;
+  background: #1b2b1f; /* was #273549 */
+  color: var(--text-light);
+}
+
+/* Buttons */
+button {
+  padding: 14px 0;
+  background: #228B22;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+  user-select: none;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
 button:hover,
 button:focus {
-  background: var(--forest-green-dark);
-  box-shadow: 0 0 10px var(--forest-green-dark);
+  background: #145214;
+  box-shadow: 0 0 10px rgba(20, 82, 20, 0.7);
+  outline: none;
 }
 
+ul { list-style-type: none; padding-left: 0; margin: 0; }
+
+/* Contact info links */
+.contact-info {
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
 .contact-info:hover {
-  color: var(--forest-green-light);
-  text-shadow: 0 0 8px var(--forest-green-light), 0 0 15px var(--forest-green-dark);
+  color: #32CD32;
+  text-shadow: 0 0 8px rgba(50, 205, 50, 0.8), 0 0 15px #145214;
+  text-decoration: underline;
+}
+
+/* --- Responsive Styles --- */
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+  #site-title {
+    font-size: 2.5rem;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.2;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header h1 { font-size: 2.2rem; }
+  header p { font-size: 1rem; }
+  section { padding: 30px 20px; margin: 15px; }
+  form { width: 100%; max-width: 100%; }
+  nav ul { flex-direction: column; gap: 10px; }
+}
+
+/* Phone adjustments */
+@media (max-width: 480px) {
+  #site-title {
+    font-size: 1.6rem;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.2;
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header h1 { font-size: 1.8rem; }
+  header p { font-size: 0.95rem; }
+  section h2 { font-size: 1.4rem; }
+  section p { font-size: 0.95rem; }
+  .cta-button, button { width: 100%; padding: 14px; }
+  img { max-width: 100%; height: auto; }
 }
