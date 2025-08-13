@@ -61,7 +61,7 @@ p {
 
 /* Header */
 header {
-  background: var(--hour-blue);
+  background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
   color: var(--text-light);
   padding: 60px 20px;
   text-align: center;
@@ -245,4 +245,5 @@ ul li::before {
   section p { font-size: 0.95rem; }
   .cta-button, button { width: 100%; padding: 14px; }
   img { max-width: 100%; height: auto; }
+}
 }
