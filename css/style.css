@@ -34,7 +34,7 @@ body {
   padding: 0;
   line-height: 1.6;
 
-  /* ✅ Green “ground” background */
+  /* Green “ground” background */
   background: var(--dark-navy); /* fallback */
   background: linear-gradient(180deg, #142312 0%, #1b2a17 60%, #152414 100%);
 
@@ -43,13 +43,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Header */
+/* Header = gradient behind "Haynes&Co Cyber Defense" */
 header {
-  background: #228B22; /* Solid forest green now */
+  background: linear-gradient(90deg, #228B22, #145214);
   color: var(--hour-blue-light);
   padding: 60px 20px 50px;
   text-align: center;
-  /* ✅ Shadow tinted green */
   box-shadow: 0 4px 10px rgba(20, 82, 20, 0.55);
   position: relative;
   z-index: 10;
@@ -101,9 +100,9 @@ header p {
   outline: none;
 }
 
-/* Section styling */
+/* Sections = solid forest green */
 section {
-  background: linear-gradient(90deg, #228B22, #145214); /* Gradient now in sections */
+  background: #228B22; /* <-- solid forest green */
   margin: 25px auto;
   padding: 45px 30px;
   max-width: 900px;
