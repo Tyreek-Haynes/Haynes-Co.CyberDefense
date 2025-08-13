@@ -30,12 +30,13 @@ p {
 }
 
 /* Center Contact, About Us, and Our Services sections */
-#contact, #about-us, #our-services {
+#contact, #about, #services {
   text-align: center;
 }
 
-#contact h2, #about-us h2, #our-services h2,
-#contact p, #about-us p, #our-services p {
+#contact h2, #about h2, #services h2,
+#contact p, #about p, #services p,
+#services ul {
   margin-left: auto;
   margin-right: auto;
   max-width: 800px; /* Optional for better readability */
