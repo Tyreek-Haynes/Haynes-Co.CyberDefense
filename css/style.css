@@ -1,4 +1,3 @@
-/* Root variables for easy theming */
 :root {
   --hour-blue: #0b2545; /* blackish for titles */
   --hour-blue-light: #228B22; /* forest green */
@@ -23,6 +22,11 @@ body {
   background: var(--dark-navy);
   color: var(--text-light);
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Center all paragraph text */
+p {
+  text-align: center;
 }
 
 /* Header */
@@ -211,4 +215,3 @@ ul li::before {
   .cta-button, button { width: 100%; padding: 14px; }
   img { max-width: 100%; height: auto; }
 }
-
