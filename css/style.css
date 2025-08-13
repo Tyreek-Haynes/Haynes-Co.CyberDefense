@@ -34,7 +34,7 @@ body {
   padding: 0;
   line-height: 1.6;
 
-  /* Green “ground” background */
+  /* ✅ Green “ground” background */
   background: var(--dark-navy); /* fallback */
   background: linear-gradient(180deg, #142312 0%, #1b2a17 60%, #152414 100%);
 
@@ -43,9 +43,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Header = gradient behind "Haynes&Co Cyber Defense" */
+/* Header */
 header {
-  background: linear-gradient(90deg, #228B22, #145214);
+  background: #228B22; /* solid forest green */
   color: var(--hour-blue-light);
   padding: 60px 20px 50px;
   text-align: center;
@@ -56,9 +56,9 @@ header {
   border-bottom-right-radius: 20px;
 }
 
-/* Header main heading - keep title white */
+/* Header main heading - keep title white per your request */
 header h1 {
-  color: #ffffff;
+  color: #ffffff; /* white title for contrast */
   font-size: 3rem;
   margin-bottom: 10px;
   font-weight: 700;
@@ -100,9 +100,9 @@ header p {
   outline: none;
 }
 
-/* Sections = solid forest green */
+/* Section styling */
 section {
-  background: #228B22; /* <-- solid forest green */
+  background: linear-gradient(90deg, #228B22, #145214); /* green linear gradient */
   margin: 25px auto;
   padding: 45px 30px;
   max-width: 900px;
@@ -118,7 +118,7 @@ section:hover {
 
 /* Section headings */
 section h2 {
-  color: #000000;
+  color: #000000; /* keep black */
   margin-bottom: 15px;
   font-weight: 600;
   font-size: 1.8rem;
@@ -153,7 +153,7 @@ footer {
   flex-direction: column;
   padding: 20px 30px;
   background: linear-gradient(90deg, #228B22, #145214);
-  color: #eaf5ea;
+  color: #eaf5ea; /* legible on green */
   font-size: 0.9rem;
   user-select: none;
   text-align: center;
@@ -171,6 +171,7 @@ form {
   align-items: center;
 }
 
+/* Inputs now use greenish ground tones (not blue-gray) */
 input, textarea {
   padding: 14px 16px;
   border: 1.5px solid #334a36;
@@ -178,7 +179,7 @@ input, textarea {
   font-size: 1rem;
   transition: border-color var(--transition-speed), box-shadow var(--transition-speed), background var(--transition-speed);
   resize: vertical;
-  background: #152317;
+  background: #152317; /* was #1e293b */
   color: var(--text-light);
   width: 100%;
   max-width: 450px;
@@ -189,7 +190,7 @@ input:focus, textarea:focus {
   border-color: #32CD32;
   box-shadow: 0 0 6px rgba(50, 205, 50, 0.55);
   outline: none;
-  background: #1b2b1f;
+  background: #1b2b1f; /* was #273549 */
   color: var(--text-light);
 }
 
@@ -218,6 +219,7 @@ button:focus {
 
 ul { list-style-type: none; padding-left: 0; margin: 0; }
 
+/* Contact info links */
 .contact-info {
   color: white;
   font-weight: 600;
@@ -232,6 +234,8 @@ ul { list-style-type: none; padding-left: 0; margin: 0; }
 }
 
 /* --- Responsive Styles --- */
+
+/* Tablet adjustments */
 @media (max-width: 768px) {
   #site-title {
     font-size: 2.5rem;
@@ -249,6 +253,7 @@ ul { list-style-type: none; padding-left: 0; margin: 0; }
   nav ul { flex-direction: column; gap: 10px; }
 }
 
+/* Phone adjustments */
 @media (max-width: 480px) {
   #site-title {
     font-size: 1.6rem;
