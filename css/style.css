@@ -49,8 +49,8 @@ header h1 {
 
 /* Call to action button */
 .cta-button {
-  display: inline-block;
-  margin-top: 25px;
+  display: block;           /* changed to block for centering */
+  margin: 30px auto;        /* vertical spacing and center horizontally */
   padding: 14px 28px;
   background: var(--hour-blue-light);
   color: var(--text-light);
@@ -59,6 +59,7 @@ header h1 {
   border-radius: 35px;
   box-shadow: 0 8px 20px rgba(50, 205, 50, 0.5);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  width: fit-content;       /* fits button width to content */
 }
 
 .cta-button:hover {
