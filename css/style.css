@@ -29,6 +29,18 @@ p {
   text-align: center;
 }
 
+/* Center Contact, About Us, and Our Services sections */
+#contact, #about-us, #our-services {
+  text-align: center;
+}
+
+#contact h2, #about-us h2, #our-services h2,
+#contact p, #about-us p, #our-services p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px; /* Optional for better readability */
+}
+
 /* Header */
 header {
   background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
@@ -216,3 +228,4 @@ ul li::before {
   .cta-button, button { width: 100%; padding: 14px; }
   img { max-width: 100%; height: auto; }
 }
+
