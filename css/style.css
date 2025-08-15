@@ -315,29 +315,29 @@ nav ul {
   }
 }
 
-   /* --- Services Containers --- */
+  /* --- Services Containers --- */
 .services-container {
   display: flex;
   justify-content: center;  /* center the row */
   gap: 20px;                /* spacing between service boxes */
   flex-wrap: wrap;          /* wrap on smaller screens */
   margin-top: 30px;
-  text-align: left;         /* ensure flex layout works */
+  text-align: center;       /* center content inside boxes on small screens */
 }
 
 /* Individual Service Boxes */
 .service-item {
-  flex: 0 1 30%;            /* ~3 boxes per row */
+  flex: 1 1 30%;            /* flexible width, ~3 boxes per row */
   min-width: 250px;
-  max-width: 300px;
+  max-width: 320px;
   background: var(--content-box-bg);
   color: var(--text-light);
   padding: 25px 20px;
   border-radius: var(--border-radius);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;       /* center text inside each box */
 }
-
 
 .service-item:hover {
   transform: translateY(-5px);
@@ -349,7 +349,6 @@ nav ul {
   color: var(--content-text-blue);
   margin-bottom: 10px;
   font-size: 1.2rem;
-  text-align: center;
 }
 
 /* Service Description */
@@ -357,7 +356,7 @@ nav ul {
   font-size: 0.95rem;
   line-height: 1.4;
   margin: 0;
-  white-space: pre-line;  /* allows line breaks in text */
+  white-space: pre-line;
 }
 
 /* Distinguish Recurring Services Section */
@@ -367,7 +366,6 @@ nav ul {
   text-decoration: underline;
 }
 
-/* Optional: Different hover for recurring services to distinguish them */
 #services .services-container:nth-of-type(2) .service-item:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 12px 30px rgba(50, 205, 50, 0.4);
@@ -381,13 +379,6 @@ nav ul {
   .service-item {
     flex: 1 1 45%; /* two boxes per row on tablets */
     max-width: 100%;
-    text-align: center;
-  }
-  .service-item h3 {
-    font-size: 1.1rem;
-  }
-  .service-item p {
-    font-size: 0.9rem;
   }
 }
 
@@ -396,10 +387,5 @@ nav ul {
     flex: 1 1 100%; /* full width on phones */
     padding: 20px 15px;
   }
-  .service-item h3 {
-    font-size: 1rem;
-  }
-  .service-item p {
-    font-size: 0.85rem;
-  }
 }
+
