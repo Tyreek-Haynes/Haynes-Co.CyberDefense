@@ -315,28 +315,29 @@ nav ul {
   }
 }
 
-/* --- Services Containers --- */
+   /* --- Services Containers --- */
 .services-container {
   display: flex;
-  justify-content: space-around;   /* spread boxes evenly */
-  gap: 20px;                       /* spacing between service boxes */
-  flex-wrap: wrap;                 /* wrap on smaller screens */
+  justify-content: center;  /* center the row */
+  gap: 20px;                /* spacing between service boxes */
+  flex-wrap: wrap;          /* wrap on smaller screens */
   margin-top: 30px;
+  text-align: left;         /* ensure flex layout works */
 }
 
 /* Individual Service Boxes */
 .service-item {
-  flex: 0 0 28%;                   /* fixed width ~28% of container */
-  min-width: 250px;                /* prevents boxes from getting too narrow */
-  max-width: 300px;                 /* optional max width */
+  flex: 0 1 30%;            /* ~3 boxes per row */
+  min-width: 250px;
+  max-width: 300px;
   background: var(--content-box-bg);
   color: var(--text-light);
   padding: 25px 20px;
   border-radius: var(--border-radius);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .service-item:hover {
   transform: translateY(-5px);
