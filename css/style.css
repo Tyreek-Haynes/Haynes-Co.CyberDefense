@@ -108,7 +108,7 @@ ul {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
-  color: var(--text-light);
+  /* remove color: var(--text-light); so it doesn't override service boxes */
 }
 
 ul li {
@@ -125,6 +125,18 @@ ul li::before {
   color: var(--content-text-blue);
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+/* --- Lists inside service boxes should be dark --- */
+.service-item ul {
+  color: var(--text-dark); /* keeps text inside boxes dark */
+}
+
+/* --- Make only "Recurring Services" heading white --- */
+.recurring-heading {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 40px;
 }
 
 /* --- Contact links --- */
