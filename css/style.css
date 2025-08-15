@@ -255,3 +255,9 @@ button:hover {
   section p, ul li { font-size: 1rem; }
 }
 
+/* --- Make only "Recurring Services" heading white --- */
+.recurring-heading {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 40px;
+}
