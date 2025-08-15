@@ -208,11 +208,11 @@ button:hover {
 
 .service-item {
   flex: 1 1 250px;
-  background-color: var(--light-grey);
+  background-color: var(--light-grey); /* Original grey box */
   padding: 20px;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  color: var(--text-dark);
+  color: var(--text-dark); /* Original text color */
 }
 
 .service-item h3 {
@@ -222,6 +222,11 @@ button:hover {
 
 .service-item ul {
   padding-left: 20px;
+}
+
+/* --- Make only "Recurring Services" heading white --- */
+.recurring-heading {
+  color: #ffffff;
 }
 
 /* --- Responsive adjustments --- */
@@ -250,7 +255,3 @@ button:hover {
   section p, ul li { font-size: 1rem; }
 }
 
-
-.recurring-heading {
-  color: #ffffff;
-}
