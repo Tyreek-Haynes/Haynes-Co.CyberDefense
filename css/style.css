@@ -316,3 +316,88 @@ nav ul {
 }
 
 
+/* --- Services Containers --- */
+.services-container {
+  display: flex;
+  justify-content: center;   /* center all service items */
+  gap: 20px;                 /* spacing between service boxes */
+  flex-wrap: wrap;           /* wrap on smaller screens */
+  margin-top: 30px;
+}
+
+/* Individual Service Boxes */
+.service-item {
+  flex: 1;                   /* equal width */
+  min-width: 250px;          /* prevents boxes from getting too narrow */
+  max-width: 300px;          /* optional max width */
+  background: var(--content-box-bg);
+  color: var(--text-light);
+  padding: 25px 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Service Titles */
+.service-item h3 {
+  color: var(--content-text-blue);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Service Description */
+.service-item p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+  white-space: pre-line;  /* allows line breaks in text */
+}
+
+/* Distinguish Recurring Services Section */
+#services h2:nth-of-type(2) {
+  margin-top: 50px;
+  color: var(--hour-blue-light);
+  text-decoration: underline;
+}
+
+/* Optional: Different hover for recurring services to distinguish them */
+#services .services-container:nth-of-type(2) .service-item:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(50, 205, 50, 0.4);
+}
+
+/* Responsive adjustments for service boxes */
+@media (max-width: 768px) {
+  .services-container {
+    gap: 15px;
+  }
+  .service-item {
+    max-width: 100%;
+    text-align: center;
+  }
+  .service-item h3 {
+    font-size: 1.1rem;
+  }
+  .service-item p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-item {
+    padding: 20px 15px;
+  }
+  .service-item h3 {
+    font-size: 1rem;
+  }
+  .service-item p {
+    font-size: 0.85rem;
+  }
+}
