@@ -130,7 +130,7 @@ ul li::before {
 .service-item ul {
   color: var(--text-dark);
   padding-left: 0;
-  text-align: left;
+  text-align: left; /* keep normal services left-aligned */
 }
 
 /* --- Recurring Services heading --- */
@@ -138,6 +138,13 @@ ul li::before {
   color: #ffffff;
   text-align: center;
   margin-top: 40px;
+}
+
+/* --- Recurring Services: center the text and bullets --- */
+.recurring-services .service-item ul {
+  text-align: center;
+  padding-left: 0;
+  list-style-position: inside; /* keeps bullets nicely inside box */
 }
 
 /* --- Contact links --- */
@@ -215,7 +222,8 @@ button:hover {
   flex-direction: row;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; /* centers all boxes */
+  align-items: flex-start;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -228,12 +236,11 @@ button:hover {
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   color: var(--text-dark);
+  text-align: center; /* centers text */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertically center content */
-  align-items: center;     /* horizontally center content */
-  text-align: center;
-  min-height: 300px;       /* ensures uniform height for all boxes */
+  justify-content: flex-start;
+  min-height: 280px; /* ensures uniform height */
 }
 
 .service-item h3 {
@@ -245,8 +252,8 @@ button:hover {
 .recurring-services {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch; /* equal heights */
+  justify-content: center; /* center boxes horizontally */
+  align-items: stretch;    /* equal heights */
   gap: 20px;
   text-align: center;
   margin-bottom: 40px;
@@ -255,12 +262,6 @@ button:hover {
 .recurring-services .service-item {
   flex: 1 1 250px;
   width: 250px; /* fixed width for consistency */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertical centering */
-  align-items: center;     /* horizontal centering */
-  text-align: center;
-  min-height: 300px;       /* equal height for both tiers */
 }
 
 /* --- Responsive adjustments --- */
