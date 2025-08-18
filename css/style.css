@@ -215,8 +215,7 @@ button:hover {
   flex-direction: row;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center; /* centers all boxes */
-  align-items: flex-start;
+  justify-content: center;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -229,11 +228,12 @@ button:hover {
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   color: var(--text-dark);
-  text-align: center; /* centers text */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  min-height: 280px; /* ensures uniform height */
+  justify-content: center; /* vertically center content */
+  align-items: center;     /* horizontally center content */
+  text-align: center;
+  min-height: 300px;       /* ensures uniform height for all boxes */
 }
 
 .service-item h3 {
@@ -245,8 +245,8 @@ button:hover {
 .recurring-services {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* center boxes horizontally */
-  align-items: stretch;    /* equal heights */
+  justify-content: center;
+  align-items: stretch; /* equal heights */
   gap: 20px;
   text-align: center;
   margin-bottom: 40px;
@@ -255,6 +255,12 @@ button:hover {
 .recurring-services .service-item {
   flex: 1 1 250px;
   width: 250px; /* fixed width for consistency */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  text-align: center;
+  min-height: 300px;       /* equal height for both tiers */
 }
 
 /* --- Responsive adjustments --- */
