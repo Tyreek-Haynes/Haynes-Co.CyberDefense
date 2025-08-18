@@ -285,7 +285,21 @@ button:hover {
   }
 }
 
+/* --- Mobile Fix for Standard Tier Overlap --- */
 @media (max-width: 480px) {
   section h2 { font-size: 1.3rem; }
   section p, ul li { font-size: 1rem; }
+
+  /* Stack service boxes vertically and prevent overlap */
+  .services-container,
+  .recurring-services {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-item {
+    width: 100% !important; /* full width for mobile */
+    max-width: 300px;       /* optional cap */
+    margin-bottom: 20px;    /* spacing between boxes */
+  }
 }
