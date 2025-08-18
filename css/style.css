@@ -108,12 +108,11 @@ ul {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
-  /* remove color: var(--text-light); so it doesn't override service boxes */
 }
 
 ul li {
   margin-bottom: 12px;
-  padding-left: 18px;
+  padding-left: 25px;
   position: relative;
   font-size: 1.1rem;
 }
@@ -127,12 +126,14 @@ ul li::before {
   font-size: 1.2rem;
 }
 
-/* --- Lists inside service boxes should be dark --- */
+/* Lists inside service boxes */
 .service-item ul {
-  color: var(--text-dark); /* keeps text inside boxes dark */
+  color: var(--text-dark);
+  padding-left: 0;
+  text-align: left;
 }
 
-/* --- Make only "Recurring Services" heading white --- */
+/* --- Recurring Services heading --- */
 .recurring-heading {
   color: #ffffff;
   text-align: center;
@@ -214,17 +215,21 @@ button:hover {
   flex-direction: row;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; /* centers all boxes */
+  align-items: flex-start;
+  text-align: center;
   margin-bottom: 40px;
 }
 
+/* Service Boxes */
 .service-item {
   flex: 1 1 250px;
-  background-color: var(--light-grey); /* Original grey box */
+  background-color: var(--light-grey);
   padding: 20px;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  color: var(--text-dark); /* Original text color */
+  color: var(--text-dark);
+  text-align: center; /* centers text */
 }
 
 .service-item h3 {
@@ -232,13 +237,14 @@ button:hover {
   margin-bottom: 10px;
 }
 
-.service-item ul {
-  padding-left: 20px;
+/* Recurring Services Boxes */
+.recurring-services {
+  justify-content: center; /* center recurring service boxes */
+  text-align: center;
 }
 
-/* --- Make only "Recurring Services" heading white --- */
-.recurring-heading {
-  color: #ffffff;
+.recurring-services .service-item {
+  width: 250px;
 }
 
 /* --- Responsive adjustments --- */
@@ -265,11 +271,4 @@ button:hover {
 @media (max-width: 480px) {
   section h2 { font-size: 1.3rem; }
   section p, ul li { font-size: 1rem; }
-}
-
-/* --- Make only "Recurring Services" heading white --- */
-.recurring-heading {
-  color: #ffffff;
-  text-align: center;
-  margin-top: 40px;
 }
