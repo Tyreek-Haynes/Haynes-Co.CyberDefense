@@ -217,12 +217,12 @@ button:hover {
 }
 
 /* --- Services Container --- */
-.services-container {
+.services-container,
+.recurring-services {
   display: flex;
-  flex-direction: row;
-  gap: 20px;
   flex-wrap: wrap;
-  justify-content: center; /* centers all boxes */
+  gap: 20px;
+  justify-content: center;
   align-items: flex-start;
   text-align: center;
   margin-bottom: 40px;
@@ -231,16 +231,19 @@ button:hover {
 /* Service Boxes */
 .service-item {
   flex: 1 1 250px;
+  max-width: 100%;      /* flexible width */
+  min-width: 220px;     /* optional minimum */
   background-color: var(--light-grey);
   padding: 20px;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   color: var(--text-dark);
-  text-align: center; /* centers text */
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 280px; /* ensures uniform height */
+  min-height: 280px;
+  box-sizing: border-box;
 }
 
 .service-item h3 {
@@ -248,30 +251,21 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* --- Recurring Services Container --- */
-.recurring-services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* center boxes horizontally */
-  align-items: stretch;    /* equal heights */
-  gap: 20px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
+/* Recurring Services Boxes */
 .recurring-services .service-item {
   flex: 1 1 250px;
-  width: 250px; /* fixed width for consistency */
+  width: auto;           /* flexible width */
 }
 
 /* --- Responsive adjustments --- */
 @media (max-width: 768px) {
-  .services-container {
+  .services-container,
+  .recurring-services {
     flex-direction: column;
     align-items: center;
   }
 
-  section { 
+  section {
     padding: 30px 20px; 
     margin: 20px 15px;
     border-radius: 15px;
@@ -290,16 +284,15 @@ button:hover {
   section h2 { font-size: 1.3rem; }
   section p, ul li { font-size: 1rem; }
 
-  /* Stack service boxes vertically and prevent overlap */
+  .service-item {
+    width: 100% !important; /* full width on mobile */
+    max-width: 300px;       /* optional cap */
+    margin-bottom: 20px;    /* spacing between stacked boxes */
+  }
+
   .services-container,
   .recurring-services {
     flex-direction: column;
     align-items: center;
-  }
-
-  .service-item {
-    width: 100% !important; /* full width for mobile */
-    max-width: 300px;       /* optional cap */
-    margin-bottom: 20px;    /* spacing between boxes */
   }
 }
