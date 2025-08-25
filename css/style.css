@@ -1,7 +1,8 @@
 <style>
+/* --- Existing :root variables --- */
 :root {
-  --hour-blue: #0b2545;
-  --hour-blue-light: #228B22;
+  --hour-blue: #0b2545; /* blackish for titles */
+  --hour-blue-light: #228B22; /* forest green */
   --light-grey: #e6e8f0;
   --text-dark: #16213e;
   --text-light: #f0f4f8;
@@ -11,19 +12,14 @@
   --dark-navy: #2c3e50;
   --content-box-bg: #34495e;
   --content-text-blue: #32CD32;
-
-  /* Dark mode variables */
-  --bg-light: #f4f4f8;
-  --text-dark-mode: #1c1c1c;
-  --box-bg-light: #ffffff;
 }
 
-*,
-*::before,
-*::after {
+/* --- Global box-sizing --- */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
+/* --- Base styles --- */
 body {
   font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
@@ -36,23 +32,34 @@ body {
   position: relative;
 }
 
-body.dark-mode {
-  background: var(--bg-light);
-  color: var(--text-dark-mode);
-}
-
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
+}
+
+p { text-align: center; }
+
+/* --- Sections --- */
+#contact, #about, #services {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+
+#contact h2, #about h2, #services h2,
+#contact p, #about p, #services p,
+#services ul {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  text-align: center;
 }
 
 section {
@@ -68,15 +75,9 @@ section {
   z-index: 1;
 }
 
-body.dark-mode section {
-  background: var(--box-bg-light);
-  color: var(--text-dark-mode);
-}
+section:hover { transform: translateY(-8px); }
 
-section:hover {
-  transform: translateY(-8px);
-}
-
+/* --- Header --- */
 header {
   background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
   color: var(--text-light);
@@ -89,6 +90,21 @@ header {
   z-index: 1;
 }
 
+header h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(50, 205, 50, 0.5);
+}
+
+/* --- Logo --- */
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
 #logo img {
   width: 120px;
   height: auto;
@@ -97,13 +113,13 @@ header {
   animation: logoIntro 1s ease forwards;
   animation-play-state: paused;
 }
-
 @keyframes logoIntro {
   0% { opacity: 0; transform: scale(0.5); }
   60% { opacity: 1; transform: scale(1.1); }
   100% { transform: scale(1); }
 }
 
+/* --- CTA Button --- */
 .cta-button {
   display: block;
   margin: 30px auto;
@@ -114,77 +130,96 @@ header {
   font-weight: 700;
   border-radius: 35px;
   box-shadow: 0 8px 20px rgba(50, 205, 50, 0.5);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   width: fit-content;
 }
-
 .cta-button:hover {
   background: #176817;
-  box-shadow: 0 0 20px rgba(50, 205, 50, 0.9), 0 0 30px rgba(50, 205, 50, 0.6);
-  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(50, 205, 50, 0.7),
+              0 0 25px rgba(50, 205, 50, 0.5);
 }
 
+/* --- Lists --- */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+ul li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  font-size: 1.1rem;
+}
+ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--content-text-blue);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.service-item ul {
+  color: var(--text-dark);
+  padding-left: 0;
+  text-align: left;
+}
+
+/* --- Reveal on Scroll --- */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .services-container { flex-direction: column; align-items: center; }
+  section { padding: 30px 20px; margin: 20px 15px; border-radius: 15px; max-width: 100%; }
+  .cta-button, button { width: 100%; max-width: 100%; }
+}
+@media (max-width: 600px) {
+  section h2 { font-size: 1.3rem; }
+  section p, ul li { font-size: 1rem; }
+  .services-container, .recurring-services { flex-direction: column; align-items: center; gap: 15px; }
+  .service-item { flex: 1 1 auto; width: 90%; max-width: 350px; min-width: 200px; margin-bottom: 15px; }
+  .service-item ul { text-align: center; padding-left: 0; list-style-position: inside; }
+  .service-item h3 { font-size: 1.2rem; }
+  .service-item li { font-size: 1rem; }
+}
 </style>
 
 <script>
-// --- Logo intro animation (first visit only) ---
 window.addEventListener("DOMContentLoaded", () => {
+  // --- Logo intro animation ---
   const logo = document.querySelector("#logo img");
-  if (!logo) return;
-
-  if (!localStorage.getItem("logoAnimated")) {
-    logo.style.animationPlayState = "running";
-    localStorage.setItem("logoAnimated", "true");
-  } else {
-    logo.style.opacity = "1";
-    logo.style.transform = "scale(1)";
+  if (logo) {
+    if (!localStorage.getItem("logoAnimated")) {
+      logo.style.animationPlayState = "running";
+      localStorage.setItem("logoAnimated", "true");
+    } else {
+      logo.style.opacity = "1";
+      logo.style.transform = "scale(1)";
+    }
   }
 
-  // --- Scroll reveal with stagger ---
+  // --- Scroll reveal ---
   const reveals = document.querySelectorAll(".reveal");
-  const windowHeight = window.innerHeight;
-
-  function revealElements() {
-    reveals.forEach((el, index) => {
+  function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+    reveals.forEach(el => {
       const elementTop = el.getBoundingClientRect().top;
       if (elementTop < windowHeight - 80) {
-        setTimeout(() => el.classList.add("active"), index * 150);
+        el.classList.add("active");
       }
     });
   }
 
-  window.addEventListener("scroll", revealElements);
-  revealElements(); // reveal on load if visible
-
-  // --- Dark/Light Mode Toggle ---
-  const toggleBtn = document.createElement("button");
-  toggleBtn.textContent = "🌙";
-  toggleBtn.style.position = "fixed";
-  toggleBtn.style.top = "15px";
-  toggleBtn.style.right = "15px";
-  toggleBtn.style.padding = "10px 15px";
-  toggleBtn.style.border = "none";
-  toggleBtn.style.borderRadius = "50%";
-  toggleBtn.style.cursor = "pointer";
-  toggleBtn.style.zIndex = "999";
-  document.body.appendChild(toggleBtn);
-
-  if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark-mode");
-
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
-    toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-  });
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // run on load
 });
 </script>
