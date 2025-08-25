@@ -1,26 +1,29 @@
 <style>
-/* --- Existing :root variables --- */
 :root {
-  --hour-blue: #0b2545; /* blackish for titles */
-  --hour-blue-light: #228B22; /* forest green */
+  --hour-blue: #0b2545;
+  --hour-blue-light: #228B22;
   --light-grey: #e6e8f0;
   --text-dark: #16213e;
   --text-light: #f0f4f8;
   --border-radius: 10px;
   --transition-speed: 0.3s;
 
-  /* New colors for dark navy content background */
-  --dark-navy: #2c3e50; /* dark navy or muted green */
-  --content-box-bg: #34495e; /* muted green tone */
-  --content-text-blue: #32CD32; /* lime green for highlights */
+  --dark-navy: #2c3e50;
+  --content-box-bg: #34495e;
+  --content-text-blue: #32CD32;
+
+  /* Dark mode variables */
+  --bg-light: #f4f4f8;
+  --text-dark-mode: #1c1c1c;
+  --box-bg-light: #ffffff;
 }
 
-/* --- Global box-sizing --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-/* --- Base styles --- */
 body {
   font-family: 'Poppins', Arial, sans-serif;
   margin: 0;
@@ -33,37 +36,23 @@ body {
   position: relative;
 }
 
-/* Subtle cyber grid overlay */
+body.dark-mode {
+  background: var(--bg-light);
+  color: var(--text-dark-mode);
+}
+
 body::before {
   content: "";
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
   z-index: 0;
-}
-
-p {
-  text-align: center;
-}
-
-/* --- Sections --- */
-#contact, #about, #services {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-}
-
-#contact h2, #about h2, #services h2,
-#contact p, #about p, #services p,
-#services ul {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 600px;
-  text-align: center;
 }
 
 section {
@@ -79,11 +68,15 @@ section {
   z-index: 1;
 }
 
+body.dark-mode section {
+  background: var(--box-bg-light);
+  color: var(--text-dark-mode);
+}
+
 section:hover {
   transform: translateY(-8px);
 }
 
-/* --- Header --- */
 header {
   background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
   color: var(--text-light);
@@ -96,36 +89,21 @@ header {
   z-index: 1;
 }
 
-header h1 {
-  font-weight: 700;
-  font-size: 3rem;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-  text-shadow: 0 0 8px rgba(50, 205, 50, 0.5);
-}
-
-/* --- Logo --- */
-#logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px auto;
-}
 #logo img {
   width: 120px;
   height: auto;
   opacity: 0;
   transform: scale(0.5);
   animation: logoIntro 1s ease forwards;
-  animation-play-state: paused; /* only run when JS says so */
+  animation-play-state: paused;
 }
+
 @keyframes logoIntro {
   0% { opacity: 0; transform: scale(0.5); }
   60% { opacity: 1; transform: scale(1.1); }
   100% { transform: scale(1); }
 }
 
-/* --- Call To Action Button --- */
 .cta-button {
   display: block;
   margin: 30px auto;
@@ -136,227 +114,25 @@ header h1 {
   font-weight: 700;
   border-radius: 35px;
   box-shadow: 0 8px 20px rgba(50, 205, 50, 0.5);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
   width: fit-content;
 }
+
 .cta-button:hover {
   background: #176817;
-  box-shadow: 0 0 12px rgba(50, 205, 50, 0.7),
-              0 0 25px rgba(50, 205, 50, 0.5);
+  box-shadow: 0 0 20px rgba(50, 205, 50, 0.9), 0 0 30px rgba(50, 205, 50, 0.6);
+  transform: scale(1.05);
 }
 
-/* --- Lists --- */
-ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
-ul li {
-  margin-bottom: 12px;
-  padding-left: 25px;
-  position: relative;
-  font-size: 1.1rem;
-}
-ul li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: var(--content-text-blue);
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-.service-item ul {
-  color: var(--text-dark);
-  padding-left: 0;
-  text-align: left;
-}
-
-/* --- Recurring Services --- */
-.recurring-heading {
-  color: #ffffff;
-  text-align: center;
-  margin-top: 40px;
-}
-.recurring-services .service-item ul {
-  text-align: center;
-  padding-left: 0;
-  list-style-position: inside;
-}
-
-/* --- Contact links --- */
-.contact-info {
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-.contact-info:hover {
-  color: var(--content-text-blue);
-  text-shadow: 0 0 8px rgba(50, 205, 50, 0.8), 0 0 15px #145214;
-  text-decoration: underline;
-}
-
-/* --- Footer --- */
-footer {
-  text-align: center;
-  padding: 30px 15px;
-  background: var(--hour-blue);
-  color: var(--hour-blue-light);
-  font-weight: 600;
-  letter-spacing: 1.1px;
-}
-
-/* --- Forms --- */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 450px;
-  margin: 0 auto;
-}
-input, textarea {
-  padding: 15px 18px;
-  border: none;
-  border-radius: var(--border-radius);
-  font-size: 1rem;
-  background: var(--dark-navy);
-  color: var(--text-light);
-  box-shadow: inset 0 2px 5px rgba(0,0,0,0.15);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  resize: vertical;
-}
-input:focus, textarea:focus {
-  outline: none;
-  background: var(--content-box-bg);
-  box-shadow: 0 0 8px 2px var(--hour-blue-light);
-}
-button {
-  padding: 14px;
-  background: var(--hour-blue);
-  color: var(--text-light);
-  font-weight: 700;
-  font-size: 1.1rem;
-  border-radius: var(--border-radius);
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(11, 37, 69, 0.5);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-button:hover {
-  background: var(--hour-blue-light);
-  box-shadow: 0 0 12px rgba(34, 139, 34, 0.7),
-              0 0 25px rgba(34, 139, 34, 0.5);
-}
-
-/* --- Services Container --- */
-.services-container {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: center;
-  margin-bottom: 40px;
-}
-.service-item {
-  flex: 1 1 250px;
-  background-color: var(--light-grey);
-  padding: 20px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  color: var(--text-dark);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  min-height: 280px;
-  transition: all 0.3s ease;
-}
-.service-item h3 {
-  color: var(--hour-blue);
-  margin-bottom: 10px;
-}
-.service-item:hover {
-  box-shadow: 0 0 12px rgba(34, 139, 34, 0.5),
-              0 0 25px rgba(34, 139, 34, 0.3);
-  transform: translateY(-5px) scale(1.02);
-}
-
-/* --- Recurring Services Container --- */
-.recurring-services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 20px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-.recurring-services .service-item,
-.services-container .service-item {
-  flex: 1 1 auto;
-}
-
-/* --- Reveal on Scroll --- */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
+
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* --- Responsive adjustments --- */
-@media (max-width: 768px) {
-  .services-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  section { 
-    padding: 30px 20px; 
-    margin: 20px 15px;
-    border-radius: 15px;
-    max-width: 100%;
-  }
-  .cta-button,
-  button {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-/* --- Mobile Fix --- */
-@media (max-width: 600px) {
-  section h2 { font-size: 1.3rem; }
-  section p, ul li { font-size: 1rem; }
-  .services-container,
-  .recurring-services {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  .service-item {
-    flex: 1 1 auto;
-    width: 90%;
-    max-width: 350px;
-    min-width: 200px;
-    margin-bottom: 15px;
-  }
-  .service-item ul {
-    text-align: center;
-    padding-left: 0;
-    list-style-position: inside;
-  }
-  .service-item h3 {
-    font-size: 1.2rem;
-  }
-  .service-item li {
-    font-size: 1rem;
-  }
 }
 </style>
 
@@ -373,17 +149,42 @@ window.addEventListener("DOMContentLoaded", () => {
     logo.style.opacity = "1";
     logo.style.transform = "scale(1)";
   }
-});
 
-// --- Scroll reveal ---
-const reveals = document.querySelectorAll(".reveal");
-window.addEventListener("scroll", () => {
-  for (let el of reveals) {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    if (elementTop < windowHeight - 80) {
-      el.classList.add("active");
-    }
+  // --- Scroll reveal with stagger ---
+  const reveals = document.querySelectorAll(".reveal");
+  const windowHeight = window.innerHeight;
+
+  function revealElements() {
+    reveals.forEach((el, index) => {
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 80) {
+        setTimeout(() => el.classList.add("active"), index * 150);
+      }
+    });
   }
+
+  window.addEventListener("scroll", revealElements);
+  revealElements(); // reveal on load if visible
+
+  // --- Dark/Light Mode Toggle ---
+  const toggleBtn = document.createElement("button");
+  toggleBtn.textContent = "🌙";
+  toggleBtn.style.position = "fixed";
+  toggleBtn.style.top = "15px";
+  toggleBtn.style.right = "15px";
+  toggleBtn.style.padding = "10px 15px";
+  toggleBtn.style.border = "none";
+  toggleBtn.style.borderRadius = "50%";
+  toggleBtn.style.cursor = "pointer";
+  toggleBtn.style.zIndex = "999";
+  document.body.appendChild(toggleBtn);
+
+  if (localStorage.getItem("darkMode") === "true") document.body.classList.add("dark-mode");
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+    toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  });
 });
 </script>
