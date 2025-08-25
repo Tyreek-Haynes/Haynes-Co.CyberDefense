@@ -1,3 +1,4 @@
+<style>
 /* --- Existing :root variables --- */
 :root {
   --hour-blue: #0b2545; /* blackish for titles */
@@ -25,9 +26,23 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background: var(--dark-navy);
+  background: linear-gradient(160deg, #0b2545 0%, #2c3e50 50%, #000000 100%);
+  background-attachment: fixed;
   color: var(--text-light);
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+/* Subtle cyber grid overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 p {
@@ -60,6 +75,8 @@ section {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, background-color 0.3s ease;
   color: var(--text-light);
+  position: relative;
+  z-index: 1;
 }
 
 section:hover {
@@ -75,6 +92,8 @@ header {
   box-shadow: 0 4px 15px rgba(34, 139, 34, 0.5);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
+  position: relative;
+  z-index: 1;
 }
 
 header h1 {
@@ -82,8 +101,31 @@ header h1 {
   font-size: 3rem;
   margin-bottom: 10px;
   letter-spacing: 2px;
+  text-shadow: 0 0 8px rgba(50, 205, 50, 0.5);
 }
 
+/* --- Logo --- */
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+}
+#logo img {
+  width: 120px;
+  height: auto;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: logoIntro 1s ease forwards;
+  animation-play-state: paused; /* only run when JS says so */
+}
+@keyframes logoIntro {
+  0% { opacity: 0; transform: scale(0.5); }
+  60% { opacity: 1; transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* --- Call To Action Button --- */
 .cta-button {
   display: block;
   margin: 30px auto;
@@ -97,10 +139,10 @@ header h1 {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   width: fit-content;
 }
-
 .cta-button:hover {
   background: #176817;
-  box-shadow: 0 12px 30px rgba(23, 104, 23, 0.7);
+  box-shadow: 0 0 12px rgba(50, 205, 50, 0.7),
+              0 0 25px rgba(50, 205, 50, 0.5);
 }
 
 /* --- Lists --- */
@@ -109,14 +151,12 @@ ul {
   padding-left: 0;
   margin: 0;
 }
-
 ul li {
   margin-bottom: 12px;
   padding-left: 25px;
   position: relative;
   font-size: 1.1rem;
 }
-
 ul li::before {
   content: "✔";
   position: absolute;
@@ -125,26 +165,22 @@ ul li::before {
   font-weight: bold;
   font-size: 1.2rem;
 }
-
-/* Lists inside service boxes */
 .service-item ul {
   color: var(--text-dark);
   padding-left: 0;
-  text-align: left; /* keep normal services left-aligned */
+  text-align: left;
 }
 
-/* --- Recurring Services heading --- */
+/* --- Recurring Services --- */
 .recurring-heading {
   color: #ffffff;
   text-align: center;
   margin-top: 40px;
 }
-
-/* --- Recurring Services: center the text and bullets --- */
 .recurring-services .service-item ul {
   text-align: center;
   padding-left: 0;
-  list-style-position: inside; /* keeps bullets nicely inside box */
+  list-style-position: inside;
 }
 
 /* --- Contact links --- */
@@ -179,7 +215,6 @@ form {
   max-width: 450px;
   margin: 0 auto;
 }
-
 input, textarea {
   padding: 15px 18px;
   border: none;
@@ -191,13 +226,11 @@ input, textarea {
   transition: background-color 0.3s ease, color 0.3s ease;
   resize: vertical;
 }
-
 input:focus, textarea:focus {
   outline: none;
   background: var(--content-box-bg);
   box-shadow: 0 0 8px 2px var(--hour-blue-light);
 }
-
 button {
   padding: 14px;
   background: var(--hour-blue);
@@ -210,10 +243,10 @@ button {
   box-shadow: 0 8px 20px rgba(11, 37, 69, 0.5);
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 button:hover {
   background: var(--hour-blue-light);
-  box-shadow: 0 12px 30px rgba(34, 139, 34, 0.7);
+  box-shadow: 0 0 12px rgba(34, 139, 34, 0.7),
+              0 0 25px rgba(34, 139, 34, 0.5);
 }
 
 /* --- Services Container --- */
@@ -222,13 +255,11 @@ button:hover {
   flex-direction: row;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center; /* centers all boxes */
+  justify-content: center;
   align-items: flex-start;
   text-align: center;
   margin-bottom: 40px;
 }
-
-/* Service Boxes */
 .service-item {
   flex: 1 1 250px;
   background-color: var(--light-grey);
@@ -236,33 +267,47 @@ button:hover {
   border-radius: var(--border-radius);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   color: var(--text-dark);
-  text-align: center; /* centers text */
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 280px; /* ensures uniform height */
+  min-height: 280px;
+  transition: all 0.3s ease;
 }
-
 .service-item h3 {
   color: var(--hour-blue);
   margin-bottom: 10px;
+}
+.service-item:hover {
+  box-shadow: 0 0 12px rgba(34, 139, 34, 0.5),
+              0 0 25px rgba(34, 139, 34, 0.3);
+  transform: translateY(-5px) scale(1.02);
 }
 
 /* --- Recurring Services Container --- */
 .recurring-services {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* center boxes horizontally */
-  align-items: stretch;    /* equal heights */
+  justify-content: center;
+  align-items: stretch;
   gap: 20px;
   text-align: center;
   margin-bottom: 40px;
 }
-
-/* Make all service boxes flexible for Basic and Standard tiers */
 .recurring-services .service-item,
 .services-container .service-item {
-  flex: 1 1 auto; /* allow shrinking */
+  flex: 1 1 auto;
+}
+
+/* --- Reveal on Scroll --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* --- Responsive adjustments --- */
@@ -271,14 +316,12 @@ button:hover {
     flex-direction: column;
     align-items: center;
   }
-
   section { 
     padding: 30px 20px; 
     margin: 20px 15px;
     border-radius: 15px;
     max-width: 100%;
   }
-
   .cta-button,
   button {
     width: 100%;
@@ -286,37 +329,61 @@ button:hover {
   }
 }
 
-/* --- Mobile Fix for all tiers --- */
+/* --- Mobile Fix --- */
 @media (max-width: 600px) {
   section h2 { font-size: 1.3rem; }
   section p, ul li { font-size: 1rem; }
-
   .services-container,
   .recurring-services {
-    flex-direction: column;  /* stack vertically */
+    flex-direction: column;
     align-items: center;
     gap: 15px;
   }
-
   .service-item {
-    flex: 1 1 auto;       /* allow box to shrink naturally */
-    width: 90%;           /* full width with padding */
-    max-width: 350px;     /* optional cap */
-    min-width: 200px;     /* optional floor */
-    margin-bottom: 15px;  /* spacing between boxes */
+    flex: 1 1 auto;
+    width: 90%;
+    max-width: 350px;
+    min-width: 200px;
+    margin-bottom: 15px;
   }
-
   .service-item ul {
-    text-align: center;   /* center bullets */
+    text-align: center;
     padding-left: 0;
     list-style-position: inside;
   }
-
   .service-item h3 {
-    font-size: 1.2rem;    /* slightly smaller on mobile */
+    font-size: 1.2rem;
   }
-
   .service-item li {
-    font-size: 1rem;      /* slightly smaller text */
+    font-size: 1rem;
   }
 }
+</style>
+
+<script>
+// --- Logo intro animation (first visit only) ---
+window.addEventListener("DOMContentLoaded", () => {
+  const logo = document.querySelector("#logo img");
+  if (!logo) return;
+
+  if (!localStorage.getItem("logoAnimated")) {
+    logo.style.animationPlayState = "running";
+    localStorage.setItem("logoAnimated", "true");
+  } else {
+    logo.style.opacity = "1";
+    logo.style.transform = "scale(1)";
+  }
+});
+
+// --- Scroll reveal ---
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+  for (let el of reveals) {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 80) {
+      el.classList.add("active");
+    }
+  }
+});
+</script>

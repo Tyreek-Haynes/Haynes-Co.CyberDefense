@@ -1,103 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haynes&Co CyberDefense</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="styles.css"> <!-- OR paste your <style> block here -->
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <h1 id="site-title">Haynes&amp;Co CyberDefense</h1>
-    <p><em>Precision protection for a digital world</em></p>
-    <a href="#contact" class="cta-button">Get in Touch</a>
+    <div id="logo">
+      <img src="Haynes_and_Co_Logo-removebg-preview.png" alt="Haynes&Co Logo">
+    </div>
+    <h1>Haynes&Co CyberDefense</h1>
   </header>
 
-  <!-- Services -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services-container">
-      <div class="service-item">
-        <h3>Staff Security Training</h3>
-        <ul>
-          <li>Build a security-aware team to reduce internal threats</li>
-          <li>Train employees to spot and prevent common cyber threats</li>
-        </ul>
-      </div>
-
-      <div class="service-item">
-        <h3>Security Audits & Risk Assessments</h3>
-        <ul>
-          <li>Ensure compliance with industry standards and frameworks</li>
-          <li>Detailed findings and recommendations</li>
-        </ul>
-      </div>
-
-      <div class="service-item">
-        <h3>Security Planning</h3>
-        <ul>
-          <li>Understand core missions and technology support</li>
-          <li>Identify types of threats businesses face</li>
-          <li>Engage with stakeholders on cybersecurity goals and help them get to it</li>
-        </ul>
-      </div>
-    </div> <!-- closes services-container -->
-  </section> <!-- closes #services -->
-
-  <!-- Recurring Services -->
-  <section id="recurring-services">
-    <h2 class="recurring-heading">Recurring Services</h2>
-    <div class="services-container recurring-services">
-      <div class="service-item">
-        <h3>Basic Tier</h3>
-        <ul>
-          <li>Monthly external vulnerability scan (automated)</li>
-          <li>1 security policy template per month</li>
-          <li>1 hour of consulting/month (Zoom or phone)</li>
-          <li>Email support (respond within 48 hours)</li>
-        </ul>
-      </div>
-      <div class="service-item">
-        <h3>Standard Tier</h3>
-        <ul>
-          <li>All of Basic, plus:</li>
-          <li>Quarterly security risk assessment</li>
-          <li>Monthly report + recommendations</li>
-          <li>4 hours/month of consulting/advice</li>
-          <li>Priority support (24-hour response)</li>
-          <li>Light compliance advisory (SOC 2, HIPAA)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
+  <section id="about" class="reveal">
     <h2>About Us</h2>
-    <p>
-      Founded by Tyreek Haynes, Haynes&Co CyberDefense brings expert knowledge and real-world
-      experience to help businesses secure their digital assets.
-    </p>
+    <p>We secure your digital world with advanced cyber defense.</p>
   </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:tyreekhaynes01@gmail.com" class="contact-info">tyreekhaynes01@gmail.com</a></p>
-    <p>Phone: <a href="tel:+14843012319" class="contact-info">(484) 301-2319</a></p>
-    <p>Book a 30-minute meeting with me anytime.</p>
-    <a href="https://calendly.com/tyreekhaynes01/30min" 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="cta-button">
-      Schedule a 30-Min Meeting
-    </a>
+  <section id="services" class="reveal">
+    <h2>Our Services</h2>
+    <p>Security monitoring, audits, and incident response.</p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Haynes&Co CyberDefense. All rights reserved.</p>
+    <p>© 2025 Haynes&Co CyberDefense</p>
   </footer>
+
+  <script>
+  // --- Logo intro animation (first visit only) ---
+  window.addEventListener("DOMContentLoaded", () => {
+    const logo = document.querySelector("#logo img");
+    if (!logo) return;
+
+    if (!localStorage.getItem("logoAnimated")) {
+      logo.style.animationPlayState = "running";
+      localStorage.setItem("logoAnimated", "true");
+    } else {
+      logo.style.opacity = "1";
+      logo.style.transform = "scale(1)";
+    }
+  });
+
+  // --- Scroll reveal ---
+  window.addEventListener("scroll", () => {
+    const reveals = document.querySelectorAll(".reveal");
+    for (let el of reveals) {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      if (elementTop < windowHeight - 80) {
+        el.classList.add("active");
+      }
+    }
+  });
+  </script>
 </body>
 </html>
