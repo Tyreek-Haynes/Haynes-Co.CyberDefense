@@ -101,12 +101,12 @@ header {
 
 /* --- Logo fixed in top-left corner --- */
 #logo {
-  position: fixed; /* stays in top-left corner */
-  top: 15px;
-  left: 15px;
-  width: 80px;  /* smaller size */
+  position: absolute; /* stays in top-left corner */
+  top: 20px;
+  left: 20px;
+  width: 60px;  /* smaller size */
   height: auto;
-  z-index: 1000;
+  z-index: 100;
 }
 
 #logo img {
@@ -330,7 +330,7 @@ button:hover {
     position: relative;
     top: auto;
     left: auto;
-    width: 100px;
+    width: 80px;  /* smaller for tablets */
   }
   #logo img {
     width: 100%;
