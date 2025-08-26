@@ -85,7 +85,7 @@ section:hover {
 /* --- Header --- */
 header {
   position: relative;
-  padding: 20px 40px;
+  padding: 60px 40px 20px 40px; /* extra top padding for bigger logo */
   background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -93,22 +93,24 @@ header {
   color: var(--text-light);
   text-align: center;
   display: flex;
-  justify-content: center; /* center header content */
+  flex-direction: column; /* ensures text stays centered */
   align-items: center;
   gap: 20px;
   z-index: 1;
 }
 
-/* --- Logo on the left --- */
+/* --- Logo fixed in top-left corner --- */
 #logo {
-  position: absolute;
-  left: 40px; /* stays to the left */
-  top: 50%;
-  transform: translateY(-50%);
+  position: fixed; /* stays in corner regardless of scrolling */
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  height: auto;
+  z-index: 1000;
 }
 
 #logo img {
-  width: 100px;
+  width: 100%;
   height: auto;
 }
 
@@ -117,7 +119,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: center; /* center the text */
+  align-items: center; /* keeps header text centered */
 }
 
 header h1 {
@@ -326,9 +328,10 @@ button:hover {
   }
   #logo {
     position: relative;
-    left: auto;
     top: auto;
+    left: auto;
     transform: none;
+    width: 120px;
   }
   #logo img {
     width: 120px;
