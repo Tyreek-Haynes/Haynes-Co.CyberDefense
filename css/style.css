@@ -113,13 +113,8 @@ header h1 {
 #logo img {
   width: 120px;
   height: auto;
-  opacity: 0;
-  transform: scale(0.5);
-}
-@keyframes logoIntro {
-  0% { opacity: 0; transform: scale(0.5); }
-  60% { opacity: 1; transform: scale(1.1); }
-  100% { transform: scale(1); }
+  opacity: 1; /* no animation */
+  transform: none;
 }
 
 /* --- Call To Action Button --- */

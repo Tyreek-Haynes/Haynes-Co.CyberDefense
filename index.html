@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Haynes&Co CyberDefense</title>
-  <link rel="stylesheet" href="styles.css"> <!-- OR paste your <style> block here -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
@@ -14,12 +14,12 @@
     <h1>Haynes&Co CyberDefense</h1>
   </header>
 
-  <section id="about" class="reveal">
+  <section id="about">
     <h2>About Us</h2>
     <p>We secure your digital world with advanced cyber defense.</p>
   </section>
 
-  <section id="services" class="reveal">
+  <section id="services">
     <h2>Our Services</h2>
     <p>Security monitoring, audits, and incident response.</p>
   </section>
@@ -27,33 +27,5 @@
   <footer>
     <p>© 2025 Haynes&Co CyberDefense</p>
   </footer>
-
-  <script>
-  // --- Logo intro animation (first visit only) ---
-  window.addEventListener("DOMContentLoaded", () => {
-    const logo = document.querySelector("#logo img");
-    if (!logo) return;
-
-    if (!localStorage.getItem("logoAnimated")) {
-      logo.style.animationPlayState = "running";
-      localStorage.setItem("logoAnimated", "true");
-    } else {
-      logo.style.opacity = "1";
-      logo.style.transform = "scale(1)";
-    }
-  });
-
-  // --- Scroll reveal ---
-  window.addEventListener("scroll", () => {
-    const reveals = document.querySelectorAll(".reveal");
-    for (let el of reveals) {
-      const windowHeight = window.innerHeight;
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 80) {
-        el.classList.add("active");
-      }
-    }
-  });
-  </script>
 </body>
 </html>
