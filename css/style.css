@@ -84,43 +84,48 @@ section:hover {
 
 /* --- Header --- */
 header {
+  display: flex;
+  align-items: center; /* vertical alignment */
+  justify-content: flex-start; /* left align content */
+  gap: 20px; /* space between logo and text */
+  padding: 20px 40px;
   background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
-  color: var(--text-light);
-  padding: 60px 20px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(34, 139, 34, 0.5);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
+  color: var(--text-light);
+  box-shadow: 0 4px 15px rgba(34, 139, 34, 0.5);
   position: relative;
   z-index: 1;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo img {
+  width: 100px; /* adjust as needed */
+  height: auto;
+}
+
+#header-text {
+  display: flex;
+  flex-direction: column; /* stack title, tagline, and button vertically */
+  gap: 10px;
 }
 
 header h1 {
   font-weight: 700;
   font-size: 3rem;
-  margin-bottom: 10px;
+  margin: 0;
   letter-spacing: 2px;
   text-shadow: 0 0 8px rgba(50, 205, 50, 0.5);
 }
 
-/* --- Logo --- */
-#logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px auto;
-}
-#logo img {
-  width: 120px;
-  height: auto;
-  opacity: 1; /* no animation */
-  transform: none;
-}
-
 /* --- Call To Action Button --- */
 .cta-button {
-  display: block;
-  margin: 30px auto;
+  display: inline-block;
   padding: 14px 28px;
   background: var(--hour-blue-light);
   color: var(--text-light);
@@ -131,6 +136,7 @@ header h1 {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   width: fit-content;
 }
+
 .cta-button:hover {
   background: #176817;
   box-shadow: 0 0 12px rgba(50, 205, 50, 0.7),
@@ -307,6 +313,14 @@ button:hover {
   button {
     width: 100%;
     max-width: 100%;
+  }
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  #logo img {
+    width: 120px;
   }
 }
 
