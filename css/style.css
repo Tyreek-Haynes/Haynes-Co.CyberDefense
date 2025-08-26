@@ -96,17 +96,20 @@ header {
   box-shadow: 0 4px 15px rgba(34, 139, 34, 0.5);
   position: relative;
   z-index: 1;
+  text-align: left; /* ensure logo is on the left */
 }
 
+/* Move logo to the left */
 #logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  text-align: left;
+  margin: 0;
 }
 
 #logo img {
   width: 100px; /* adjust as needed */
   height: auto;
+  display: inline-block;
 }
 
 #header-text {
@@ -316,7 +319,7 @@ button:hover {
   }
   header {
     flex-direction: column;
-    text-align: center;
+    text-align: center; /* stack content on small screens */
     gap: 15px;
   }
   #logo img {
