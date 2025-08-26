@@ -84,38 +84,40 @@ section:hover {
 
 /* --- Header --- */
 header {
-  display: flex;
-  align-items: center; /* vertical alignment */
-  justify-content: flex-start; /* left align content */
-  gap: 20px; /* space between logo and text */
+  position: relative;
   padding: 20px 40px;
   background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  color: var(--text-light);
   box-shadow: 0 4px 15px rgba(34, 139, 34, 0.5);
-  position: relative;
+  color: var(--text-light);
+  text-align: center;
+  display: flex;
+  justify-content: center; /* center header content */
+  align-items: center;
+  gap: 20px;
   z-index: 1;
-  text-align: left; /* ensure logo is on the left */
 }
 
-/* Move logo to the left */
+/* --- Logo on the left --- */
 #logo {
-  display: block;
-  text-align: left;
-  margin: 0;
+  position: absolute;
+  left: 40px; /* stays to the left */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #logo img {
-  width: 100px; /* adjust as needed */
+  width: 100px;
   height: auto;
-  display: inline-block;
 }
 
+/* --- Header text --- */
 #header-text {
   display: flex;
-  flex-direction: column; /* stack title, tagline, and button vertically */
+  flex-direction: column;
   gap: 10px;
+  align-items: center; /* center the text */
 }
 
 header h1 {
@@ -319,8 +321,14 @@ button:hover {
   }
   header {
     flex-direction: column;
-    text-align: center; /* stack content on small screens */
+    text-align: center; /* keep text centered on smaller screens */
     gap: 15px;
+  }
+  #logo {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
   }
   #logo img {
     width: 120px;
