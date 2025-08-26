@@ -105,7 +105,7 @@ header {
   top: 50px;
   left: 20px;
   transform: translateY(-50%); /* vertical centering */
-  width: 360px;  /* medium size for desktop */
+  width: 300px;  /* medium size for desktop */
   height: auto;
   z-index: 100;
 }
