@@ -101,10 +101,10 @@ header {
 
 /* --- Logo fixed in top-left corner --- */
 #logo {
-  position: fixed; /* stays in corner regardless of scrolling */
-  top: 20px;
-  left: 20px;
-  width: 150px;
+  position: fixed; /* stays in top-left corner */
+  top: 15px;
+  left: 15px;
+  width: 80px;  /* smaller size */
   height: auto;
   z-index: 1000;
 }
@@ -330,11 +330,10 @@ button:hover {
     position: relative;
     top: auto;
     left: auto;
-    transform: none;
-    width: 120px;
+    width: 100px;
   }
   #logo img {
-    width: 120px;
+    width: 100%;
   }
 }
 
