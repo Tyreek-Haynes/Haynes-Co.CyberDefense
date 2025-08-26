@@ -99,12 +99,12 @@ header {
   z-index: 1;
 }
 
-/* --- Logo fixed in top-left corner --- */
+/* --- Logo fixed in top-left corner (medium size) --- */
 #logo {
   position: absolute; /* stays in top-left corner */
   top: 20px;
   left: 20px;
-  width: 60px;  /* smaller size */
+  width: 120px;  /* medium size for desktop */
   height: auto;
   z-index: 100;
 }
@@ -327,10 +327,7 @@ button:hover {
     gap: 15px;
   }
   #logo {
-    position: relative;
-    top: auto;
-    left: auto;
-    width: 80px;  /* smaller for tablets */
+    width: 100px;  /* medium size for tablets */
   }
   #logo img {
     width: 100%;
@@ -364,5 +361,8 @@ button:hover {
   }
   .service-item li {
     font-size: 1rem;
+  }
+  #logo {
+    width: 80px;  /* smaller on mobile */
   }
 }
