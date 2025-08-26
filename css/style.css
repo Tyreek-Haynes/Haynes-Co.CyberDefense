@@ -102,7 +102,7 @@ header {
 /* --- Logo fixed in top-left corner (medium size) --- */
 #logo {
   position: absolute; /* stays in top-left corner */
-  top: 50px;
+  top: 55px;
   left: 20px;
   transform: translateY(-50%); /* vertical centering */
   width: 300px;  /* medium size for desktop */
