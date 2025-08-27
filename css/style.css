@@ -102,8 +102,9 @@ header {
 /* --- Logo fixed in top-left corner, aligned with header text --- */
 #logo {
   position: absolute;
-  top: 100px;  /* tweaked to align visually with header text */
+  top: 50%;
   left: 20px;
+  transform: translateY(-50%);
   width: 300px;  /* desktop size */
   height: auto;
   z-index: 100;
@@ -327,7 +328,7 @@ button:hover {
     gap: 15px;
   }
   #logo {
-    position: relative;
+    position: relative; /* stack above header text */
     top: auto;
     left: auto;
     transform: none;
@@ -339,7 +340,6 @@ button:hover {
   }
 }
 
-/* --- Mobile Fix --- */
 @media (max-width: 600px) {
   section h2 { font-size: 1.3rem; }
   section p, ul li { font-size: 1rem; }
