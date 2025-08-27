@@ -99,15 +99,15 @@ header {
   z-index: 1;
 }
 
-/* --- Logo fixed in top-left corner (medium size) --- */
+/* --- Logo fixed in top-left corner, aligned with header --- */
 #logo {
-  position: absolute; /* stays in top-left corner */
-  top: 80px;
+  position: absolute;
+  top: 50%;
   left: 20px;
+  transform: translateY(-50%); /* vertically center with header */
   width: 300px;  /* medium size for desktop */
   height: auto;
   z-index: 100;
-  transform: translateY(calc(-50% + 20px)); /* moves it 20px lower */
 }
 
 #logo img {
@@ -328,7 +328,12 @@ button:hover {
     gap: 15px;
   }
   #logo {
-    width: 100px;  /* medium size for tablets */
+    position: relative; /* stack logo above header text */
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 150px;  /* medium for tablets */
+    margin-bottom: 15px;
   }
   #logo img {
     width: 100%;
@@ -364,6 +369,7 @@ button:hover {
     font-size: 1rem;
   }
   #logo {
-    width: 80px;  /* smaller on mobile */
+    width: 120px;  /* smaller on phones */
+    margin-bottom: 10px;
   }
 }
