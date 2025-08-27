@@ -93,19 +93,18 @@ header {
   color: var(--text-light);
   text-align: center;
   display: flex;
-  flex-direction: column; /* ensures text stays centered */
+  flex-direction: column;
   align-items: center;
   gap: 20px;
   z-index: 1;
 }
 
-/* --- Logo fixed in top-left corner, aligned with header --- */
+/* --- Logo fixed in top-left corner, aligned with header text --- */
 #logo {
   position: absolute;
-  top: 50%;
+  top: 100px;  /* tweaked to align visually with header text */
   left: 20px;
-  transform: translateY(-50%); /* vertically center with header text */
-  width: 300px;  /* medium size for desktop */
+  width: 300px;  /* desktop size */
   height: auto;
   z-index: 100;
 }
@@ -120,7 +119,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  align-items: center; /* keeps header text centered */
+  align-items: center;
 }
 
 header h1 {
@@ -324,15 +323,15 @@ button:hover {
   }
   header {
     flex-direction: column;
-    text-align: center; /* keep text centered on smaller screens */
+    text-align: center;
     gap: 15px;
   }
   #logo {
-    position: relative; /* stack logo above header text */
+    position: relative;
     top: auto;
     left: auto;
     transform: none;
-    width: 200px;  /* bigger for tablets */
+    width: 250px;  /* bigger for tablets */
     margin-bottom: 15px;
   }
   #logo img {
@@ -369,7 +368,7 @@ button:hover {
     font-size: 1rem;
   }
   #logo {
-    width: 180px;  /* bigger on mobile phones */
+    width: 200px;  /* bigger on mobile phones */
     margin-bottom: 10px;
   }
 }
