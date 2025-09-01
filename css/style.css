@@ -49,16 +49,14 @@ p {
 }
 
 /* --- Sections --- */
-#contact, #about, #services {
+#contact, #about, #services, #recurring-services {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
 }
 
-#contact h2, #about h2, #services h2,
-#contact p, #about p, #services p,
-#services ul {
+#contact p, #about p, #services p, #services ul {
   margin-left: auto;
   margin-right: auto;
   max-width: 600px;
@@ -80,6 +78,14 @@ section {
 
 section:hover {
   transform: translateY(-8px);
+}
+
+/* --- Section Headings (consistent size for all sections) --- */
+section h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 /* --- Header --- */
@@ -241,17 +247,19 @@ button:hover {
               0 0 25px rgba(34, 139, 34, 0.5);
 }
 
-/* --- Services and Recurring Services Containers --- */
+/* --- Services Containers --- */
 .services-container,
 .recurring-services {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* center all boxes */
+  justify-content: center;
   align-items: flex-start;
   gap: 20px;
   text-align: center;
   margin-bottom: 40px;
 }
+
+/* --- Service Item --- */
 .service-item {
   flex: 1 1 250px;
   background-color: var(--light-grey);
@@ -276,49 +284,13 @@ button:hover {
   transform: translateY(-5px) scale(1.02);
 }
 
-/* --- Recurring Services --- */
-#recurring-services {
-  text-align: center;
-}
-
-#recurring-services h2 {
-  color: #ffffff; /* white like main services */
-  font-size: 2rem; /* same as main Services h2 */
-  margin-bottom: 30px;
-  text-shadow: none;
-  text-align: center;
-}
-
+/* --- Recurring Services Items --- */
 #recurring-services .service-item {
-  background-color: var(--light-grey);
-  padding: 25px 20px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  color: var(--text-dark);
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  transition: all var(--transition-speed) ease;
-  margin: 0 auto;
-  flex: 1 1 250px;
+  min-height: 280px;
 }
-
-#recurring-services .service-item h3 {
-  color: var(--hour-blue);
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-#recurring-services .service-item:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 15px rgba(34, 139, 34, 0.5), 0 0 30px rgba(34, 139, 34, 0.3);
-}
-
 #recurring-services .service-item ul {
   text-align: center;
 }
-
 #recurring-services .service-item ul li::before {
   color: var(--content-text-blue);
   font-size: 1.2rem;
