@@ -85,7 +85,7 @@ section:hover {
 /* --- Header --- */
 header {
   position: relative;
-  padding: 60px 40px 20px 40px; /* extra top padding for bigger logo */
+  padding: 60px 40px 20px 40px;
   background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -99,17 +99,16 @@ header {
   z-index: 1;
 }
 
-/* --- Logo fixed in top-left corner, aligned with header text --- */
+/* --- Logo --- */
 #logo {
   position: absolute;
   top: 50%;
   left: 20px;
   transform: translateY(-67%);
-  width: 300px;  /* desktop size */
+  width: 300px;
   height: auto;
   z-index: 100;
 }
-
 #logo img {
   width: 100%;
   height: auto;
@@ -144,7 +143,6 @@ header h1 {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   width: fit-content;
 }
-
 .cta-button:hover {
   background: #176817;
   box-shadow: 0 0 12px rgba(50, 205, 50, 0.7),
@@ -243,13 +241,12 @@ button:hover {
               0 0 25px rgba(34, 139, 34, 0.5);
 }
 
-/* --- Services Container --- */
+/* --- Services and Recurring Services Containers --- */
 .services-container,
 .recurring-services {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center; /* center boxes horizontally */
+  justify-content: center; /* center all boxes */
   align-items: flex-start;
   gap: 20px;
   text-align: center;
@@ -279,17 +276,17 @@ button:hover {
   transform: translateY(-5px) scale(1.02);
 }
 
-/* --- Recurring Services Specific Styles --- */
+/* --- Recurring Services --- */
 #recurring-services {
-  text-align: center; /* center section */
+  text-align: center;
 }
 
 #recurring-services h2 {
   color: #ffffff; /* white like main services */
-  font-size: 2.5rem; /* same size as main services */
+  font-size: 2rem; /* same as main Services h2 */
   margin-bottom: 30px;
   text-shadow: none;
-  text-align: center; /* center heading */
+  text-align: center;
 }
 
 #recurring-services .service-item {
@@ -303,7 +300,7 @@ button:hover {
   flex-direction: column;
   justify-content: flex-start;
   transition: all var(--transition-speed) ease;
-  margin: 0 auto; /* center boxes */
+  margin: 0 auto;
   flex: 1 1 250px;
 }
 
@@ -319,7 +316,7 @@ button:hover {
 }
 
 #recurring-services .service-item ul {
-  text-align: center; /* center bullet points */
+  text-align: center;
 }
 
 #recurring-services .service-item ul li::before {
