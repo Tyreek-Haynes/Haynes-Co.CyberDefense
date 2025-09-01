@@ -177,18 +177,6 @@ ul li::before {
   text-align: left;
 }
 
-/* --- Recurring Services --- */
-.recurring-heading {
-  color: #ffffff;
-  text-align: center;
-  margin-top: 40px;
-}
-.recurring-services .service-item ul {
-  text-align: center;
-  padding-left: 0;
-  list-style-position: inside;
-}
-
 /* --- Contact links --- */
 .contact-info {
   color: white;
@@ -256,13 +244,14 @@ button:hover {
 }
 
 /* --- Services Container --- */
-.services-container {
+.services-container,
+.recurring-services {
   display: flex;
   flex-direction: row;
-  gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; /* center boxes horizontally */
   align-items: flex-start;
+  gap: 20px;
   text-align: center;
   margin-bottom: 40px;
 }
@@ -290,23 +279,12 @@ button:hover {
   transform: translateY(-5px) scale(1.02);
 }
 
-/* --- Recurring Services Container --- */
-.recurring-services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: stretch;
-  gap: 20px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
 /* --- Recurring Services Specific Styles --- */
 #recurring-services h2 {
-  color: var(--hour-blue-light);
+  color: #ffffff; /* white heading */
   font-size: 2rem;
   margin-bottom: 30px;
-  text-shadow: 0 0 6px rgba(50, 205, 50, 0.5);
+  text-shadow: none; /* remove green glow */
 }
 
 #recurring-services .service-item {
@@ -328,13 +306,6 @@ button:hover {
   margin-bottom: 15px;
 }
 
-#recurring-services .service-item p.price {
-  font-weight: 700;
-  color: var(--hour-blue-light);
-  margin-top: auto;
-  font-size: 1.2rem;
-}
-
 #recurring-services .service-item:hover {
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 0 15px rgba(34, 139, 34, 0.5), 0 0 30px rgba(34, 139, 34, 0.3);
@@ -347,7 +318,8 @@ button:hover {
 
 /* --- Responsive adjustments --- */
 @media (max-width: 768px) {
-  .services-container {
+  .services-container,
+  .recurring-services {
     flex-direction: column;
     align-items: center;
   }
@@ -368,11 +340,11 @@ button:hover {
     gap: 15px;
   }
   #logo {
-    position: relative; /* stack above header text */
+    position: relative;
     top: auto;
     left: auto;
     transform: none;
-    width: 250px;  /* bigger for tablets */
+    width: 250px;
     margin-bottom: 15px;
   }
   #logo img {
@@ -408,7 +380,7 @@ button:hover {
     font-size: 1rem;
   }
   #logo {
-    width: 200px;  /* bigger on mobile phones */
+    width: 200px;
     margin-bottom: 10px;
   }
 }
