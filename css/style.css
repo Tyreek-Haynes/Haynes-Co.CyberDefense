@@ -280,11 +280,16 @@ button:hover {
 }
 
 /* --- Recurring Services Specific Styles --- */
+#recurring-services {
+  text-align: center; /* center section */
+}
+
 #recurring-services h2 {
-  color: #ffffff; /* white heading */
-  font-size: 2rem;
+  color: #ffffff; /* white like main services */
+  font-size: 2.5rem; /* same size as main services */
   margin-bottom: 30px;
-  text-shadow: none; /* remove green glow */
+  text-shadow: none;
+  text-align: center; /* center heading */
 }
 
 #recurring-services .service-item {
@@ -298,6 +303,8 @@ button:hover {
   flex-direction: column;
   justify-content: flex-start;
   transition: all var(--transition-speed) ease;
+  margin: 0 auto; /* center boxes */
+  flex: 1 1 250px;
 }
 
 #recurring-services .service-item h3 {
@@ -311,6 +318,10 @@ button:hover {
   box-shadow: 0 0 15px rgba(34, 139, 34, 0.5), 0 0 30px rgba(34, 139, 34, 0.3);
 }
 
+#recurring-services .service-item ul {
+  text-align: center; /* center bullet points */
+}
+
 #recurring-services .service-item ul li::before {
   color: var(--content-text-blue);
   font-size: 1.2rem;
@@ -318,11 +329,6 @@ button:hover {
 
 /* --- Responsive adjustments --- */
 @media (max-width: 768px) {
-  .services-container,
-  .recurring-services {
-    flex-direction: column;
-    align-items: center;
-  }
   section { 
     padding: 30px 20px; 
     margin: 20px 15px;
@@ -350,17 +356,16 @@ button:hover {
   #logo img {
     width: 100%;
   }
+  .services-container,
+  .recurring-services {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 600px) {
   section h2 { font-size: 1.3rem; }
   section p, ul li { font-size: 1rem; }
-  .services-container,
-  .recurring-services {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
   .service-item {
     flex: 1 1 auto;
     width: 90%;
@@ -370,7 +375,6 @@ button:hover {
   }
   .service-item ul {
     text-align: center;
-    padding-left: 0;
     list-style-position: inside;
   }
   .service-item h3 {
