@@ -286,8 +286,9 @@ button:hover {
 
 /* --- Recurring Services Items --- */
 #recurring-services .service-item {
-  min-height: 280px;
+  min-height: 280px
 }
+
 #recurring-services .service-item ul {
   text-align: center;
 }
@@ -356,4 +357,116 @@ button:hover {
     width: 200px;
     margin-bottom: 10px;
   }
+}
+
+/* === SECURITY ENHANCEMENTS === */
+
+/* Form security visual indicators */
+input[type="password"] {
+  font-family: sans-serif;
+  letter-spacing: 2px;
+}
+
+/* Secure field validation indicators */
+input:valid {
+  border-left: 3px solid var(--hour-blue-light);
+}
+
+input:invalid:not(:focus):not(:placeholder-shown) {
+  border-left: 3px solid #ff4444;
+}
+
+/* Security status badges */
+.security-status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.security-status.secure {
+  background-color: var(--hour-blue-light);
+  color: white;
+}
+
+.security-status.insecure {
+  background-color: #ff4444;
+  color: white;
+}
+
+/* Secure loading states */
+.loading-security {
+  opacity: 0.7;
+  pointer-events: none;
+  position: relative;
+}
+
+.loading-security::after {
+  content: "🔒";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: security-pulse 1.5s infinite;
+}
+
+@keyframes security-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* HTTPS secure link indicators */
+a[href^="https://"]::after {
+  content: " 🔒";
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+/* Enhanced focus for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--content-text-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Secure file upload styling */
+input[type="file"]:valid {
+  border: 2px dashed var(--hour-blue-light);
+  background-color: rgba(34, 139, 34, 0.1);
+}
+
+input[type="file"]:invalid {
+  border: 2px dashed #ff4444;
+}
+
+/* Security warning banners */
+.security-warning {
+  background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+  color: white;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  margin: 10px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.security-success {
+  background: linear-gradient(135deg, var(--hour-blue-light) 0%, #145214 100%);
+  color: white;
+  padding: 10px 15px;
+  border-radius: var(--border-radius);
+  margin: 10px 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.field-error {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  padding: 5px 10px;
 }

@@ -5,16 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Haynes&Co Cyber Defense</title>
   <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; script-src 'self'">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
 </head>
 
-<body> <!-- Header -->
-  <header> <!-- Logo container -->
-    <div id="logo"> <img src="images/logo.png" alt="Haynes & Co Logo"> </div> <!-- Header text -->
+<body> 
+  <!-- Header -->
+  <header> 
+    <!-- Logo container -->
+    <div id="logo"> 
+      <img src="images/logo.png" alt="Haynes & Co Logo"> 
+    </div> 
+    
+    <!-- Header text -->
     <div id="header-text">
       <h1 id="site-title">Haynes&Co Cyber Defense</h1>
-      <p><em>Precision protection for a digital world</em></p> <a href="#contact" class="cta-button">Get in Touch</a>
+      <p><em>Precision protection for a digital world</em></p> 
+      <a href="#contact" class="cta-button">Get in Touch</a>
     </div>
-  </header> <!-- Services -->
+  </header> 
+
+  <!-- Services -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services-container">
@@ -26,6 +42,17 @@
           <li>Understand how risks affect your business, not just your tech</li>
         </ul>
       </div>
+      
+      <div class="service-item">
+        <h3>Penetration Testing</h3>
+        <ul>
+          <li>Find vulnerabilities before hackers exploit them</li>
+          <li>Simulate real-world attacks to test your defenses</li>
+          <li>Get detailed reports showing what was found and how to fix it</li>
+          <li>Validate your security controls and confirm that your protections actually work</li>
+        </ul>
+      </div>
+      
       <div class="service-item">
         <h3>Security Planning & Strategy</h3>
         <ul>
@@ -34,6 +61,7 @@
           <li>Get a clear roadmap showing what to do now and what to plan for later</li>
         </ul>
       </div>
+      
       <div class="service-item">
         <h3>Staff Security Training</h3>
         <ul>
@@ -43,10 +71,13 @@
         </ul>
       </div>
     </div>
-  </section> <!-- Recurring Services -->
+  </section> 
+
+  <!-- Recurring Services -->
   <section id="recurring-services">
     <h2>Recurring Services</h2>
-    <div class="services-container"> <!-- Basic Plan -->
+    <div class="services-container"> 
+      <!-- Basic Plan -->
       <div class="service-item">
         <h3>Basic Plan</h3>
         <ul>
@@ -55,7 +86,9 @@
           <li>Monthly Security Report</li>
           <li>Email Support</li>
         </ul>
-      </div> <!-- Standard Plan -->
+      </div> 
+      
+      <!-- Standard Plan -->
       <div class="service-item">
         <h3>Standard Plan</h3>
         <ul>
@@ -67,21 +100,31 @@
         </ul>
       </div>
     </div>
-  </section> <!-- About -->
+  </section> 
+
+  <!-- About -->
   <section id="about">
     <h2>About Us</h2>
     <p> Founded by Tyreek Haynes, Haynes&Co Cyber Defense brings expert knowledge and real-world experience to help
       businesses secure their digital assets. </p>
-  </section> <!-- Contact -->
+  </section> 
+
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:tyreek@haynescyberdefense.com" class="contact-info">tyreek@haynescyberdefense.com</a></p>
     <p>Phone: <a href="tel:+14843012319" class="contact-info">(484) 301-2319</a></p>
-    <p>Book a 30-minute meeting with me anytime.</p> <a href="https://calendly.com/tyreekhaynes01/30min" target="_blank"
+    <p>Book a 30-minute meeting with me anytime.</p> 
+    <a href="https://calendly.com/tyreekhaynes01/30min" target="_blank"
       rel="noopener noreferrer" class="cta-button"> Schedule a 30-Min Meeting </a>
-  </section> <!-- Footer -->
+  </section> 
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Haynes&Co Cyber Defense. All rights reserved.</p>
   </footer>
+
+  <!-- Security JavaScript -->
+  <script src="js/security.js"></script>
 </body>
 </html>
