@@ -247,21 +247,21 @@ button:hover {
               0 0 25px rgba(34, 139, 34, 0.5);
 }
 
-/* --- Services Containers --- */
+/* --- Services Containers - Better alignment --- */
 .services-container,
 .recurring-services {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: stretch; /* Make all items same height in row */
+  gap: 25px; /* Consistent spacing */
   text-align: center;
   margin-bottom: 40px;
 }
 
-/* --- Service Item --- */
+/* --- Service Item - FIXED SIZES --- */
 .service-item {
-  flex: 1 1 250px;
+  flex: 0 0 300px; /* Don't grow, don't shrink, fixed basis */
   background-color: var(--light-grey);
   padding: 20px;
   border-radius: var(--border-radius);
@@ -271,22 +271,45 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 280px;
+  min-height: 320px; /* Fixed minimum height */
+  height: auto; /* Allow content to expand if needed */
   transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensure padding is included in dimensions */
 }
+
+/* Ensure all service items have consistent content alignment */
 .service-item h3 {
   color: var(--hour-blue);
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  min-height: 40px; /* Consistent title height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.service-item p, 
+.service-item ul {
+  flex-grow: 1; /* Push content to take available space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.service-item ul {
+  text-align: left;
+  margin-top: 10px;
+}
+
 .service-item:hover {
   box-shadow: 0 0 12px rgba(34, 139, 34, 0.5),
               0 0 25px rgba(34, 139, 34, 0.3);
   transform: translateY(-5px) scale(1.02);
 }
 
-/* --- Recurring Services Items --- */
+/* --- Recurring Services Items - Consistent sizing --- */
 #recurring-services .service-item {
-  min-height: 280px
+  min-height: 320px; /* Match the regular service items */
+  flex: 0 0 300px; /* Same fixed width */
 }
 
 #recurring-services .service-item ul {
@@ -337,11 +360,13 @@ button:hover {
   section h2 { font-size: 1.3rem; }
   section p, ul li { font-size: 1rem; }
   .service-item {
-    flex: 1 1 auto;
-    width: 90%;
+    flex: 0 0 90%; /* Full width on mobile */
     max-width: 350px;
-    min-width: 200px;
+    min-height: 280px; /* Slightly smaller on mobile */
     margin-bottom: 15px;
+  }
+  #recurring-services .service-item {
+    min-height: 280px; /* Match mobile height */
   }
   .service-item ul {
     text-align: center;
