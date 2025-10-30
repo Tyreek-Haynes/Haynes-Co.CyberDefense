@@ -12,6 +12,35 @@
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
   <meta name="referrer" content="strict-origin-when-cross-origin">
+  
+  <style>
+    /* Logo positioning fixes */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      #logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 200px !important;
+        transform: none !important;
+        z-index: 1000;
+      }
+      #header-text {
+        margin-top: 80px;
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      #logo {
+        position: relative !important;
+        width: 180px !important;
+        margin-bottom: 20px !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+      }
+    }
+  </style>
 </head>
 
 <body> 
@@ -35,7 +64,7 @@
     </div>
   </header> 
 
-  <!-- Services -->
+  <!-- Rest of your HTML remains exactly the same -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services-container">
