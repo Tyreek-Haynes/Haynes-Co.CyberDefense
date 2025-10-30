@@ -18,15 +18,18 @@
     @media (max-width: 1024px) and (min-width: 769px) {
       #logo {
         position: absolute;
-        top: 20px;
-        left: 20px;
-        width: 200px !important;
+        top: 10px !important;  /* Moved up more */
+        left: 10px !important; /* Moved left more */
+        width: 180px !important; /* Slightly smaller */
         transform: none !important;
         z-index: 1000;
       }
       #header-text {
-        margin-top: 80px;
+        margin-top: 60px; /* Less margin since logo is smaller and higher */
         width: 100%;
+      }
+      header {
+        padding-top: 40px !important; /* Reduce top padding to accommodate higher logo */
       }
     }
     
@@ -64,7 +67,7 @@
     </div>
   </header> 
 
-  <!-- Rest of your HTML remains exactly the same -->
+  <!-- Services -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services-container">
