@@ -101,6 +101,7 @@ header {
   color: var(--text-light);
   text-align: center;
   z-index: 1;
+  overflow: hidden; /* Added to prevent any overflow issues */
 }
 
 /* --- Desktop: Logo in top-left corner --- */
@@ -117,6 +118,9 @@ header {
     left: 20px;
     width: 200px;
     margin: 0;
+    transition: all 0.3s ease; /* Added for smooth transitions */
+    max-height: 80px; /* Added to prevent overly tall logos */
+    object-fit: contain; /* Added to maintain aspect ratio */
   }
   
   #header-text {
@@ -146,6 +150,9 @@ header {
     position: relative;
     width: 180px;
     margin: 0 auto 15px auto;
+    transition: all 0.3s ease; /* Added for smooth transitions */
+    max-height: 80px; /* Added to prevent overly tall logos */
+    object-fit: contain; /* Added to maintain aspect ratio */
   }
   
   #header-text {
@@ -168,6 +175,9 @@ header {
     position: relative;
     width: 160px;
     margin: 0 auto 10px auto;
+    transition: all 0.3s ease; /* Added for smooth transitions */
+    max-height: 80px; /* Added to prevent overly tall logos */
+    object-fit: contain; /* Added to maintain aspect ratio */
   }
   
   #header-text h2 {
