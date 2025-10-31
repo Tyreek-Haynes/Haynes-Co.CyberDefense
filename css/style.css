@@ -88,10 +88,10 @@ section h2 {
   margin-bottom: 30px;
 }
 
-/* --- Header --- */
+/* === FIXED HEADER & LOGO POSITIONING === */
 header {
   position: relative;
-  padding: 60px 40px 20px 40px;
+  padding: 40px 20px; /* REDUCED padding */
   background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
@@ -105,15 +105,16 @@ header {
   z-index: 1;
 }
 
-/* --- Logo --- */
+/* --- Logo - FIXED POSITIONING --- */
 #logo {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-67%);
+  position: relative; /* CHANGED from absolute */
+  top: auto; /* CHANGED */
+  left: auto; /* CHANGED */
+  transform: none; /* CHANGED */
   width: 300px;
   height: auto;
   z-index: 100;
+  margin: 0 auto 20px auto; /* ADDED - centers logo */
 }
 #logo img {
   width: 100%;
@@ -126,6 +127,7 @@ header {
   flex-direction: column;
   gap: 10px;
   align-items: center;
+  width: 100%; /* ADDED */
 }
 
 header h1 {
