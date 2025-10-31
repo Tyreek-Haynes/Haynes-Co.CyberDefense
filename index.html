@@ -18,18 +18,18 @@
     @media (max-width: 1024px) and (min-width: 769px) {
       #logo {
         position: absolute;
-        top: 10px !important;  /* Moved up more */
-        left: 10px !important; /* Moved left more */
-        width: 180px !important; /* Slightly smaller */
+        top: 2px !important;
+        left: 2px !important;
+        width: 150px !important;
         transform: none !important;
         z-index: 1000;
       }
       #header-text {
-        margin-top: 60px; /* Less margin since logo is smaller and higher */
+        margin-top: 40px;
         width: 100%;
       }
       header {
-        padding-top: 40px !important; /* Reduce top padding to accommodate higher logo */
+        padding-top: 20px !important;
       }
     }
     
@@ -42,6 +42,24 @@
         left: auto !important;
         top: auto !important;
       }
+    }
+
+    /* Fix service item layout */
+    .service-item {
+      display: flex !important;
+      flex-direction: column !important;
+      height: auto !important;
+      min-height: 320px !important;
+    }
+
+    .service-item ul {
+      flex-grow: 1 !important;
+      margin-bottom: 15px !important;
+    }
+
+    .service-item h3 {
+      min-height: auto !important;
+      margin-bottom: 10px !important;
     }
   </style>
 </head>
@@ -67,7 +85,7 @@
     </div>
   </header> 
 
-  <!-- Services -->
+  <!-- Services - FIXED LAYOUT -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services-container">
@@ -80,7 +98,7 @@
           <li>Prioritized remediation based on real business impact</li>
           <li>Executive reporting that makes sense to leadership</li>
         </ul>
-        <div style="margin-top: auto; padding-top: 15px;">
+        <div style="margin-top: auto;">
           <div class="security-status secure">Starting at $9,500</div>
         </div>
       </div>
@@ -94,7 +112,7 @@
           <li>Real-world exploitation demonstrating actual risk</li>
           <li>Detailed technical guidance from expert attackers</li>
         </ul>
-        <div style="margin-top: auto; padding-top: 15px;">
+        <div style="margin-top: auto;">
           <div class="security-status secure">Starting at $15,000</div>
         </div>
       </div>
@@ -108,14 +126,14 @@
           <li>Vendor-agnostic advice from someone who breaks systems</li>
           <li>Clear implementation priorities for maximum impact</li>
         </ul>
-        <div style="margin-top: auto; padding-top: 15px;">
+        <div style="margin-top: auto;">
           <div class="security-status secure">$3,500</div>
         </div>
       </div>
     </div>
   </section> 
 
-  <!-- Proof Section -->
+  <!-- Rest of your sections remain the same -->
   <section id="proof">
     <h2>Why We're Different</h2>
     <div style="max-width: 800px; margin: 0 auto; text-align: center;">
@@ -146,7 +164,6 @@
     </div>
   </section>
 
-  <!-- About -->
   <section id="about">
     <h2>About Us</h2>
     <div style="max-width: 800px; margin: 0 auto; text-align: center;">
@@ -156,7 +173,6 @@
     </div>
   </section> 
 
-  <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:tyreek@haynescyberdefense.com" class="contact-info">tyreek@haynescyberdefense.com</a></p>
@@ -166,12 +182,10 @@
       rel="noopener noreferrer" class="cta-button"> Schedule a 30-Min Meeting </a>
   </section> 
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Haynes&Co Cyber Defense. All rights reserved.</p>
   </footer>
 
-  <!-- Security JavaScript -->
   <script src="js/security.js"></script>
 </body>
 </html>
