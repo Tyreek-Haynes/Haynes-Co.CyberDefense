@@ -49,14 +49,14 @@ p {
 }
 
 /* --- Sections --- */
-#contact, #about, #services, #recurring-services {
+#contact, #about, #services, #proof {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
 }
 
-#contact p, #about p, #services p, #services ul {
+#contact p, #about p, #services p, #services ul, #proof p {
   margin-left: auto;
   margin-right: auto;
   max-width: 600px;
@@ -88,54 +88,126 @@ section h2 {
   margin-bottom: 30px;
 }
 
-/* === FIXED HEADER & LOGO POSITIONING === */
+/* === FIXED RESPONSIVE HEADER & LOGO === */
+
+/* --- Base header styles --- */
 header {
   position: relative;
-  padding: 40px 20px; /* REDUCED padding */
+  padding: 40px 20px;
   background: linear-gradient(135deg, var(--hour-blue-light) 0%, var(--hour-blue) 100%);
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
   box-shadow: 0 4px 15px rgba(34, 139, 34, 0.5);
   color: var(--text-light);
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
   z-index: 1;
 }
 
-/* --- Logo - FIXED POSITIONING --- */
-#logo {
-  position: relative; /* CHANGED from absolute */
-  top: auto; /* CHANGED */
-  left: auto; /* CHANGED */
-  transform: none; /* CHANGED */
-  width: 300px;
-  height: auto;
-  z-index: 100;
-  margin: 0 auto 20px auto; /* ADDED - centers logo */
+/* --- Desktop: Logo on left, content centered --- */
+@media (min-width: 1025px) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    text-align: left;
+    padding: 40px;
+  }
+  
+  #logo {
+    width: 280px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+  
+  #header-text {
+    text-align: left;
+    max-width: 600px;
+  }
+  
+  #header-text h1,
+  #header-text h2,
+  #header-text p {
+    text-align: left;
+    margin-left: 0;
+  }
+  
+  .cta-buttons {
+    justify-content: flex-start;
+  }
 }
+
+/* --- Tablet: Stacked layout --- */
+@media (max-width: 1024px) and (min-width: 769px) {
+  header {
+    display: block;
+    padding: 50px 30px 30px 30px;
+  }
+  
+  #logo {
+    width: 250px;
+    margin: 0 auto 25px auto;
+  }
+  
+  #header-text {
+    text-align: center;
+  }
+  
+  #header-text h2 {
+    font-size: 2rem;
+  }
+}
+
+/* --- Mobile: Stacked layout --- */
+@media (max-width: 768px) {
+  header {
+    display: block;
+    padding: 40px 20px 20px 20px;
+  }
+  
+  #logo {
+    width: 220px;
+    margin: 0 auto 20px auto;
+  }
+  
+  #header-text h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* --- Logo base styles --- */
+#logo {
+  display: block;
+}
+
 #logo img {
   width: 100%;
   height: auto;
+  display: block;
 }
 
-/* --- Header text --- */
+/* --- Header text container --- */
 #header-text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  width: 100%; /* ADDED */
+  gap: 15px;
 }
 
 header h1 {
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin: 0;
   letter-spacing: 2px;
   text-shadow: 0 0 8px rgba(50, 205, 50, 0.5);
+}
+
+/* CTA buttons container */
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* --- Call To Action Button --- */
@@ -250,20 +322,19 @@ button:hover {
 }
 
 /* --- Services Containers - Better alignment --- */
-.services-container,
-.recurring-services {
+.services-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch; /* Make all items same height in row */
-  gap: 25px; /* Consistent spacing */
+  align-items: stretch;
+  gap: 25px;
   text-align: center;
   margin-bottom: 40px;
 }
 
 /* --- Service Item - FIXED SIZES --- */
 .service-item {
-  flex: 0 0 300px; /* Don't grow, don't shrink, fixed basis */
+  flex: 0 0 300px;
   background-color: var(--light-grey);
   padding: 20px;
   border-radius: var(--border-radius);
@@ -273,17 +344,17 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 320px; /* Fixed minimum height */
-  height: auto; /* Allow content to expand if needed */
+  min-height: 320px;
+  height: auto;
   transition: all 0.3s ease;
-  box-sizing: border-box; /* Ensure padding is included in dimensions */
+  box-sizing: border-box;
 }
 
 /* Ensure all service items have consistent content alignment */
 .service-item h3 {
   color: var(--hour-blue);
   margin-bottom: 15px;
-  min-height: 40px; /* Consistent title height */
+  min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,7 +362,7 @@ button:hover {
 
 .service-item p, 
 .service-item ul {
-  flex-grow: 1; /* Push content to take available space */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -308,20 +379,6 @@ button:hover {
   transform: translateY(-5px) scale(1.02);
 }
 
-/* --- Recurring Services Items - Consistent sizing --- */
-#recurring-services .service-item {
-  min-height: 320px; /* Match the regular service items */
-  flex: 0 0 300px; /* Same fixed width */
-}
-
-#recurring-services .service-item ul {
-  text-align: center;
-}
-#recurring-services .service-item ul li::before {
-  color: var(--content-text-blue);
-  font-size: 1.2rem;
-}
-
 /* --- Responsive adjustments --- */
 @media (max-width: 768px) {
   section { 
@@ -335,24 +392,7 @@ button:hover {
     width: 100%;
     max-width: 100%;
   }
-  header {
-    flex-direction: column;
-    text-align: center;
-    gap: 15px;
-  }
-  #logo {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: 250px;
-    margin-bottom: 15px;
-  }
-  #logo img {
-    width: 100%;
-  }
-  .services-container,
-  .recurring-services {
+  .services-container {
     flex-direction: column;
     align-items: center;
   }
@@ -362,13 +402,10 @@ button:hover {
   section h2 { font-size: 1.3rem; }
   section p, ul li { font-size: 1rem; }
   .service-item {
-    flex: 0 0 90%; /* Full width on mobile */
+    flex: 0 0 90%;
     max-width: 350px;
-    min-height: 280px; /* Slightly smaller on mobile */
+    min-height: 280px;
     margin-bottom: 15px;
-  }
-  #recurring-services .service-item {
-    min-height: 280px; /* Match mobile height */
   }
   .service-item ul {
     text-align: center;
@@ -379,10 +416,6 @@ button:hover {
   }
   .service-item li {
     font-size: 1rem;
-  }
-  #logo {
-    width: 200px;
-    margin-bottom: 10px;
   }
 }
 
