@@ -101,7 +101,7 @@ header {
   color: var(--text-light);
   text-align: center;
   z-index: 1;
-  overflow: hidden; /* Added to prevent any overflow issues */
+  overflow: hidden;
 }
 
 /* --- Desktop: Logo in top-left corner --- */
@@ -116,11 +116,11 @@ header {
     position: absolute;
     top: 15px;
     left: 20px;
-    width: 200px;
+    width: 300px; /* Increased from 200px */
     margin: 0;
-    transition: all 0.3s ease; /* Added for smooth transitions */
-    max-height: 80px; /* Added to prevent overly tall logos */
-    object-fit: contain; /* Added to maintain aspect ratio */
+    transition: all 0.3s ease;
+    max-height: 120px; /* Increased from 80px */
+    object-fit: contain;
   }
   
   #header-text {
@@ -148,11 +148,11 @@ header {
   
   #logo {
     position: relative;
-    width: 180px;
+    width: 250px; /* Increased from 180px */
     margin: 0 auto 15px auto;
-    transition: all 0.3s ease; /* Added for smooth transitions */
-    max-height: 80px; /* Added to prevent overly tall logos */
-    object-fit: contain; /* Added to maintain aspect ratio */
+    transition: all 0.3s ease;
+    max-height: 100px; /* Increased from 80px */
+    object-fit: contain;
   }
   
   #header-text {
@@ -173,11 +173,11 @@ header {
   
   #logo {
     position: relative;
-    width: 160px;
+    width: 220px; /* Increased from 160px */
     margin: 0 auto 10px auto;
-    transition: all 0.3s ease; /* Added for smooth transitions */
-    max-height: 80px; /* Added to prevent overly tall logos */
-    object-fit: contain; /* Added to maintain aspect ratio */
+    transition: all 0.3s ease;
+    max-height: 90px; /* Increased from 80px */
+    object-fit: contain;
   }
   
   #header-text h2 {
