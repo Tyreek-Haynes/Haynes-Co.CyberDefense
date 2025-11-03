@@ -767,3 +767,85 @@ input[type="file"]:invalid {
     padding: 12px 10px;
   }
 }
+
+/* === NEW ADDITIONS FOR LATEST ELEMENTS === */
+
+/* === FOUNDER-LED BADGE === */
+.founder-led-badge {
+  background: #2c3e50;
+  color: #32CD32;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 15px auto;
+  max-width: 500px;
+  border: 2px solid #32CD32;
+  text-align: center;
+}
+
+/* === GUARANTEE BANNER === */
+.guarantee-banner {
+  background: linear-gradient(135deg, #228B22 0%, #145214 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto 30px auto;
+  max-width: 600px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(34, 139, 34, 0.3);
+}
+
+.guarantee-banner strong {
+  color: white;
+}
+
+/* === ENTERPRISE CONTACT === */
+.enterprise-contact {
+  background: #2c3e50;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  text-align: center;
+  border-left: 4px solid #32CD32;
+}
+
+.enterprise-contact p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.enterprise-contact strong {
+  color: #32CD32;
+}
+
+/* Responsive adjustments for new elements */
+@media (max-width: 768px) {
+  .founder-led-badge {
+    font-size: 1rem;
+    padding: 10px 15px;
+    margin: 10px 15px;
+  }
+  
+  .guarantee-banner {
+    font-size: 1.1rem;
+    padding: 15px;
+    margin: 0 15px 25px 15px;
+  }
+  
+  .enterprise-contact {
+    margin: 15px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .founder-led-badge {
+    font-size: 0.9rem;
+  }
+  
+  .guarantee-banner {
+    font-size: 1rem;
+  }
+}
