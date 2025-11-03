@@ -49,14 +49,14 @@ p {
 }
 
 /* --- Sections --- */
-#contact, #about, #services, #proof {
+#contact, #about, #services, #proof, #social-proof, #founder-story {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
 }
 
-#contact p, #about p, #services p, #services ul, #proof p {
+#contact p, #about p, #services p, #services ul, #proof p, #social-proof p, #founder-story p {
   margin-left: auto;
   margin-right: auto;
   max-width: 600px;
@@ -654,5 +654,116 @@ input[type="file"]:invalid {
   
   .metric-item {
     padding: 15px 10px;
+  }
+}
+
+/* === NEW SOCIAL PROOF SECTION === */
+#social-proof {
+  text-align: center;
+}
+
+#social-proof h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#social-proof p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+#social-proof ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#social-proof li {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #2c3e50;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+#social-proof li:hover {
+  transform: translateY(-3px);
+}
+
+#social-proof strong {
+  color: #32CD32;
+}
+
+/* === SERVICE PRICING === */
+.service-pricing {
+  background: #2c3e50;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  color: white;
+  text-align: center;
+}
+
+.service-pricing strong {
+  color: #32CD32;
+  font-size: 1.1rem;
+}
+
+.service-pricing p {
+  margin: 5px 0 0 0;
+  font-size: 0.9em;
+}
+
+/* === FOUNDER STORY SECTION === */
+#founder-story {
+  text-align: center;
+}
+
+#founder-story h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.founder-content {
+  background: #2c3e50;
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.founder-content p {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.founder-signature {
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+}
+
+.founder-signature strong {
+  color: #32CD32;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+  #social-proof li {
+    padding: 12px 10px;
+  }
+  
+  .founder-content {
+    padding: 20px 15px;
+  }
+  
+  .service-pricing {
+    padding: 12px 10px;
   }
 }
