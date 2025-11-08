@@ -11,38 +11,13 @@
   <!-- Your CSS File -->
   <link rel="stylesheet" href="css/style.css" />
   
-  <!-- ==================== -->
-  <!-- SECURITY HEADERS -->
-  <!-- ==================== -->
-  
-  <!-- Content Security Policy -->
-  <meta http-equiv="Content-Security-Policy" 
-        content="default-src 'self'; 
-                 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
-                 font-src 'self' https://fonts.gstatic.com;
-                 img-src 'self' data: https:; 
-                 script-src 'self' 'unsafe-inline';
-                 connect-src 'self' https://calendly.com;
-                 frame-src https://calendly.com;">
-  
-  <!-- X-Content-Type-Options - Prevents MIME type sniffing -->
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; script-src 'self'">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  
-  <!-- X-Frame-Options - Prevents clickjacking -->
   <meta http-equiv="X-Frame-Options" content="DENY">
-  
-  <!-- X-XSS-Protection - Enables XSS protection -->
   <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-  
-  <!-- Referrer Policy - Controls referrer information -->
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  
-  <!-- Permissions Policy - Controls browser features -->
-  <meta http-equiv="Permissions-Policy" 
-        content="geolocation=(), 
-                 microphone=(), 
-                 camera=(), 
-                 payment=()">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
 </head>
 
 <body> 
